@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store - TechStore</title>
+    <meta name="description" content="Browse our complete collection of electronics, smartphones, laptops, and gadgets at TechStore.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/store.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h1 class="brand-name">TechStore</h1>
+                </div>
+                <div class="nav-menu">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="store.html" class="nav-link active">Store</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="checkout.html" class="nav-link cart-link">
+                        Cart <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Store Header -->
+        <section class="store-header">
+            <div class="container">
+                <h1 class="page-title">Our Products</h1>
+                <p class="page-subtitle">Discover the latest electronics and gadgets</p>
+            </div>
+        </section>
+
+        <!-- Filters and Search -->
+        <section class="filters">
+            <div class="container">
+                <div class="filters-container">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                    <div class="filter-options">
+                        <select id="categoryFilter" class="filter-select">
+                            <option value="">All Categories</option>
+                            <option value="smartphones">Smartphones</option>
+                            <option value="laptops">Laptops</option>
+                            <option value="tablets">Tablets</option>
+                            <option value="accessories">Accessories</option>
+                            <option value="gaming">Gaming</option>
+                        </select>
+                        <select id="priceFilter" class="filter-select">
+                            <option value="">All Prices</option>
+                            <option value="0-100">$0 - $100</option>
+                            <option value="100-500">$100 - $500</option>
+                            <option value="500-1000">$500 - $1000</option>
+                            <option value="1000+">$1000+</option>
+                        </select>
+                        <button id="clearFilters" class="btn btn-secondary">Clear Filters</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Grid -->
+        <section class="products-section">
+            <div class="container">
+                <div class="products-header">
+                    <div class="results-info">
+                        <span id="resultsCount">0</span> products found
+                    </div>
+                    <div class="sort-options">
+                        <select id="sortSelect" class="sort-select">
+                            <option value="name">Sort by Name</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Sort by Rating</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be loaded dynamically -->
+                </div>
+
+                <div class="no-results" id="noResults" style="display: none;">
+                    <div class="no-results-content">
+                        <h3>No products found</h3>
+                        <p>Try adjusting your search or filters</p>
+                        <button id="resetSearch" class="btn btn-primary">Reset Search</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechStore</h3>
+                    <p>Your trusted partner for premium electronics and exceptional service.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📧 info@techstore.com</p>
+                    <p>📱 +1 (555) 123-4567</p>
+                    <p>📍 123 Tech Street, Digital City</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechStore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../scripts/branding.js"></script>
+    <script src="../scripts/cart.js"></script>
+    <script src="../scripts/filtering.js"></script>
+    <script src="../scripts/whatsapp.js"></script>
+    <script src="../scripts/emailjs-config.js"></script>
+</body>
+</html> 

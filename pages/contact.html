@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - TechStore</title>
+    <meta name="description" content="Get in touch with TechStore. We're here to help with all your electronics needs.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/checkout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h1 class="brand-name">TechStore</h1>
+                </div>
+                <div class="nav-menu">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="store.html" class="nav-link">Store</a>
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                    <a href="checkout.html" class="nav-link cart-link">
+                        Cart <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="contact-layout">
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <h1 class="page-title">Get in Touch</h1>
+                    <p class="page-subtitle">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                    
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactFirstName">First Name *</label>
+                                <input type="text" id="contactFirstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactLastName">Last Name *</label>
+                                <input type="text" id="contactLastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactEmail">Email Address *</label>
+                            <input type="email" id="contactEmail" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactPhone">Phone Number</label>
+                            <input type="tel" id="contactPhone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactSubject">Subject *</label>
+                            <select id="contactSubject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="product">Product Information</option>
+                                <option value="order">Order Status</option>
+                                <option value="support">Technical Support</option>
+                                <option value="returns">Returns & Refunds</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactMessage">Message *</label>
+                            <textarea id="contactMessage" name="message" rows="5" placeholder="Tell us how we can help you..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="newsletter" id="newsletterCheck">
+                                <span class="checkmark"></span>
+                                Subscribe to our newsletter for updates and special offers
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info-section">
+                    <div class="contact-info">
+                        <h2>Contact Information</h2>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <p>info@techstore.com</p>
+                                <p>support@techstore.com</p>
+                                <small>We typically respond within 24 hours</small>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-details">
+                                <h3>Phone</h3>
+                                <p>+1 (555) 123-4567</p>
+                                <p>+1 (555) 987-6543</p>
+                                <small>Monday - Friday: 9AM - 6PM EST</small>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-details">
+                                <h3>Address</h3>
+                                <p>123 Tech Street</p>
+                                <p>Digital City, DC 12345</p>
+                                <p>United States</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">💬</div>
+                            <div class="contact-details">
+                                <h3>WhatsApp</h3>
+                                <p>+1 (555) 123-4567</p>
+                                <small>Quick responses for urgent inquiries</small>
+                            </div>
+                        </div>
+                        
+                        <div class="business-hours">
+                            <h3>Business Hours</h3>
+                            <div class="hours-grid">
+                                <div class="day">
+                                    <span>Monday - Friday:</span>
+                                    <span>9:00 AM - 6:00 PM EST</span>
+                                </div>
+                                <div class="day">
+                                    <span>Saturday:</span>
+                                    <span>10:00 AM - 4:00 PM EST</span>
+                                </div>
+                                <div class="day">
+                                    <span>Sunday:</span>
+                                    <span>Closed</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <h3>Follow Us</h3>
+                            <div class="social-icons">
+                                <a href="#" class="social-icon" title="Facebook">📘</a>
+                                <a href="#" class="social-icon" title="Twitter">🐦</a>
+                                <a href="#" class="social-icon" title="Instagram">📷</a>
+                                <a href="#" class="social-icon" title="LinkedIn">💼</a>
+                                <a href="#" class="social-icon" title="YouTube">📺</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechStore</h3>
+                    <p>Your trusted partner for premium electronics and exceptional service.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📧 info@techstore.com</p>
+                    <p>📱 +1 (555) 123-4567</p>
+                    <p>📍 123 Tech Street, Digital City</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechStore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../scripts/branding.js"></script>
+    <script src="../scripts/cart.js"></script>
+    <script src="../scripts/filtering.js"></script>
+    <script src="../scripts/whatsapp.js"></script>
+    <script src="../scripts/emailjs-config.js"></script>
+</body>
+</html> 

@@ -1,0 +1,80 @@
+{
+  "store": {
+    "name": "TechStore",
+    "tagline": "Premium Electronics & Gadgets",
+    "description": "Your one-stop destination for premium electronics, cutting-edge gadgets, and innovative technology solutions.",
+    "logo": "🚀",
+    "favicon": "🚀"
+  },
+  "contact": {
+    "email": "info@techstore.com",
+    "supportEmail": "support@techstore.com",
+    "phone": "+1 (555) 123-4567",
+    "whatsapp": "+1 (555) 123-4567",
+    "address": {
+      "street": "123 Tech Street",
+      "city": "Digital City",
+      "state": "DC",
+      "zipCode": "12345",
+      "country": "United States"
+    },
+    "businessHours": {
+      "monday": "9:00 AM - 6:00 PM EST",
+      "tuesday": "9:00 AM - 6:00 PM EST",
+      "wednesday": "9:00 AM - 6:00 PM EST",
+      "thursday": "9:00 AM - 6:00 PM EST",
+      "friday": "9:00 AM - 6:00 PM EST",
+      "saturday": "10:00 AM - 4:00 PM EST",
+      "sunday": "Closed"
+    }
+  },
+  "social": {
+    "facebook": "#",
+    "twitter": "#",
+    "instagram": "#",
+    "linkedin": "#",
+    "youtube": "#"
+  },
+  "shipping": {
+    "freeShippingThreshold": 50,
+    "standardShipping": 5.99,
+    "expressShipping": 15.99,
+    "standardDeliveryDays": "3-5 business days",
+    "expressDeliveryDays": "1-2 business days"
+  },
+  "features": [
+    {
+      "icon": "🛡️",
+      "title": "Quality Guaranteed",
+      "description": "All products are authentic and come with manufacturer warranty"
+    },
+    {
+      "icon": "🚚",
+      "title": "Fast Delivery",
+      "description": "Quick and secure shipping to your doorstep"
+    },
+    {
+      "icon": "💬",
+      "title": "24/7 Support",
+      "description": "Expert customer service whenever you need help"
+    },
+    {
+      "icon": "💰",
+      "title": "Best Prices",
+      "description": "Competitive pricing with regular deals and discounts"
+    }
+  ],
+  "categories": [
+    "smartphones",
+    "laptops",
+    "tablets",
+    "accessories",
+    "gaming"
+  ],
+  "priceRanges": [
+    "0-100",
+    "100-500",
+    "500-1000",
+    "1000+"
+  ]
+} 

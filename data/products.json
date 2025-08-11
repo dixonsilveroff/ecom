@@ -1,0 +1,256 @@
+{
+  "products": [
+    {
+      "id": "iphone15-pro",
+      "name": "iPhone 15 Pro",
+      "category": "smartphones",
+      "price": 999.99,
+      "originalPrice": 1099.99,
+      "description": "The most advanced iPhone ever with A17 Pro chip, titanium design, and pro camera system.",
+      "features": [
+        "6.1-inch Super Retina XDR display",
+        "A17 Pro chip with 6-core GPU",
+        "Pro camera system with 48MP main camera",
+        "Titanium design with Ceramic Shield",
+        "USB-C connector"
+      ],
+      "image": "📱",
+      "rating": 4.8,
+      "reviews": 1247,
+      "inStock": true,
+      "featured": true,
+      "tags": ["new", "5G", "wireless charging"]
+    },
+    {
+      "id": "macbook-air-m2",
+      "name": "MacBook Air M2",
+      "category": "laptops",
+      "price": 1199.99,
+      "originalPrice": 1299.99,
+      "description": "Ultraportable laptop with M2 chip, all-day battery life, and stunning Retina display.",
+      "features": [
+        "13.6-inch Liquid Retina display",
+        "M2 chip with 8-core CPU and 10-core GPU",
+        "Up to 18 hours of battery life",
+        "1080p FaceTime HD camera",
+        "MagSafe 3 charging port"
+      ],
+      "image": "💻",
+      "rating": 4.9,
+      "reviews": 892,
+      "inStock": true,
+      "featured": true,
+      "tags": ["new", "M2 chip", "ultraportable"]
+    },
+    {
+      "id": "ipad-air",
+      "name": "iPad Air",
+      "category": "tablets",
+      "price": 599.99,
+      "originalPrice": 649.99,
+      "description": "Powerful tablet with M1 chip, stunning 10.9-inch display, and all-day battery life.",
+      "features": [
+        "10.9-inch Liquid Retina display",
+        "M1 chip with 8-core CPU and 8-core GPU",
+        "12MP Ultra Wide front camera",
+        "Touch ID in top button",
+        "USB-C connector"
+      ],
+      "image": "📱",
+      "rating": 4.7,
+      "reviews": 567,
+      "inStock": true,
+      "featured": false,
+      "tags": ["M1 chip", "retina display", "touch id"]
+    },
+    {
+      "id": "airpods-pro",
+      "name": "AirPods Pro",
+      "category": "accessories",
+      "price": 249.99,
+      "originalPrice": 279.99,
+      "description": "Active noise cancellation, transparency mode, and spatial audio for immersive sound.",
+      "features": [
+        "Active noise cancellation",
+        "Transparency mode",
+        "Spatial audio with dynamic head tracking",
+        "Sweat and water resistant",
+        "Up to 4.5 hours listening time"
+      ],
+      "image": "🎧",
+      "rating": 4.6,
+      "reviews": 1234,
+      "inStock": true,
+      "featured": false,
+      "tags": ["noise cancellation", "spatial audio", "wireless"]
+    },
+    {
+      "id": "ps5",
+      "name": "PlayStation 5",
+      "category": "gaming",
+      "price": 499.99,
+      "originalPrice": 499.99,
+      "description": "Next-gen gaming console with lightning-fast loading, haptic feedback, and 3D audio.",
+      "features": [
+        "4K graphics with ray tracing",
+        "Ultra-high speed SSD",
+        "DualSense wireless controller",
+        "3D audio technology",
+        "Backward compatibility with PS4 games"
+      ],
+      "image": "🎮",
+      "rating": 4.9,
+      "reviews": 2156,
+      "inStock": true,
+      "featured": true,
+      "tags": ["4K", "ray tracing", "next-gen"]
+    },
+    {
+      "id": "samsung-galaxy-s24",
+      "name": "Samsung Galaxy S24",
+      "category": "smartphones",
+      "price": 799.99,
+      "originalPrice": 899.99,
+      "description": "Revolutionary AI phone with Galaxy AI, stunning display, and powerful performance.",
+      "features": [
+        "6.2-inch Dynamic AMOLED 2X display",
+        "Snapdragon 8 Gen 3 processor",
+        "50MP main camera with AI enhancements",
+        "Galaxy AI features",
+        "25W fast charging"
+      ],
+      "image": "📱",
+      "rating": 4.7,
+      "reviews": 987,
+      "inStock": true,
+      "featured": false,
+      "tags": ["AI", "5G", "fast charging"]
+    },
+    {
+      "id": "dell-xps-13",
+      "name": "Dell XPS 13",
+      "category": "laptops",
+      "price": 999.99,
+      "originalPrice": 1199.99,
+      "description": "Premium ultrabook with InfinityEdge display, Intel Core i7, and stunning design.",
+      "features": [
+        "13.4-inch 4K Ultra HD+ display",
+        "Intel Core i7-1250U processor",
+        "16GB LPDDR5 RAM",
+        "512GB PCIe NVMe SSD",
+        "Intel Iris Xe Graphics"
+      ],
+      "image": "💻",
+      "rating": 4.5,
+      "reviews": 456,
+      "inStock": true,
+      "featured": false,
+      "tags": ["4K display", "ultrabook", "intel"]
+    },
+    {
+      "id": "nintendo-switch",
+      "name": "Nintendo Switch OLED",
+      "category": "gaming",
+      "price": 349.99,
+      "originalPrice": 349.99,
+      "description": "Hybrid gaming console with 7-inch OLED screen and enhanced audio.",
+      "features": [
+        "7-inch OLED screen",
+        "Enhanced audio",
+        "64GB internal storage",
+        "Joy-Con controllers",
+        "Dock for TV mode"
+      ],
+      "image": "🎮",
+      "rating": 4.8,
+      "reviews": 1789,
+      "inStock": true,
+      "featured": false,
+      "tags": ["hybrid", "OLED", "portable"]
+    },
+    {
+      "id": "apple-watch-series-9",
+      "name": "Apple Watch Series 9",
+      "category": "accessories",
+      "price": 399.99,
+      "originalPrice": 449.99,
+      "description": "Most advanced Apple Watch with S9 chip, faster performance, and new features.",
+      "features": [
+        "Always-On Retina display",
+        "S9 chip with 4-core neural engine",
+        "Heart rate monitoring",
+        "GPS and cellular options",
+        "Up to 18 hours battery life"
+      ],
+      "image": "⌚",
+      "rating": 4.8,
+      "reviews": 654,
+      "inStock": true,
+      "featured": false,
+      "tags": ["health", "fitness", "cellular"]
+    },
+    {
+      "id": "google-pixel-8",
+      "name": "Google Pixel 8",
+      "category": "smartphones",
+      "price": 699.99,
+      "originalPrice": 799.99,
+      "description": "Google's flagship phone with AI-powered camera and clean Android experience.",
+      "features": [
+        "6.2-inch OLED display",
+        "Google Tensor G3 processor",
+        "50MP main camera with AI features",
+        "Android 14 with 7 years of updates",
+        "Wireless charging"
+      ],
+      "image": "📱",
+      "rating": 4.6,
+      "reviews": 432,
+      "inStock": true,
+      "featured": false,
+      "tags": ["AI camera", "android", "google"]
+    },
+    {
+      "id": "logitech-mx-master",
+      "name": "Logitech MX Master 3S",
+      "category": "accessories",
+      "price": 99.99,
+      "originalPrice": 119.99,
+      "description": "Premium wireless mouse with precision scrolling and customizable buttons.",
+      "features": [
+        "8000 DPI Darkfield sensor",
+        "MagSpeed electromagnetic scrolling",
+        "7 programmable buttons",
+        "Up to 70 days battery life",
+        "Multi-device connectivity"
+      ],
+      "image": "🖱️",
+      "rating": 4.7,
+      "reviews": 789,
+      "inStock": true,
+      "featured": false,
+      "tags": ["wireless", "ergonomic", "programmable"]
+    },
+    {
+      "id": "sony-wh-1000xm5",
+      "name": "Sony WH-1000XM5",
+      "category": "accessories",
+      "price": 399.99,
+      "originalPrice": 449.99,
+      "description": "Industry-leading noise canceling headphones with exceptional sound quality.",
+      "features": [
+        "Industry-leading noise cancellation",
+        "30-hour battery life",
+        "Quick Charge (3 min = 3 hours)",
+        "Touch controls",
+        "Multipoint connection"
+      ],
+      "image": "🎧",
+      "rating": 4.9,
+      "reviews": 1123,
+      "inStock": true,
+      "featured": false,
+      "tags": ["noise cancellation", "premium", "wireless"]
+    }
+  ]
+} 

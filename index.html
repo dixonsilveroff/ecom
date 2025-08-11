@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Premium Electronics & Gadgets</title>
+    <meta name="description" content="Discover the latest electronics, smartphones, laptops, and gadgets at TechStore. Quality products with excellent customer service.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/store.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h1 class="brand-name">TechStore</h1>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="pages/store.html" class="nav-link">Store</a>
+                    <a href="pages/contact.html" class="nav-link">Contact</a>
+                    <a href="pages/checkout.html" class="nav-link cart-link">
+                        Cart <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Welcome to TechStore</h1>
+                    <p class="hero-subtitle">Your one-stop destination for premium electronics, cutting-edge gadgets, and innovative technology solutions.</p>
+                    <div class="hero-buttons">
+                        <a href="pages/store.html" class="btn btn-primary">Shop Now</a>
+                        <a href="pages/contact.html" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-placeholder">
+                        <span>🚀</span>
+                        <p>Premium Electronics</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Why Choose TechStore?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>Quality Guaranteed</h3>
+                        <p>All products are authentic and come with manufacturer warranty</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🚚</div>
+                        <h3>Fast Delivery</h3>
+                        <p>Quick and secure shipping to your doorstep</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💬</div>
+                        <h3>24/7 Support</h3>
+                        <p>Expert customer service whenever you need help</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3>Best Prices</h3>
+                        <p>Competitive pricing with regular deals and discounts</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section class="featured-products">
+            <div class="container">
+                <h2 class="section-title">Featured Products</h2>
+                <div class="products-grid" id="featuredProducts">
+                    <!-- Products will be loaded dynamically -->
+                </div>
+                <div class="text-center">
+                    <a href="pages/store.html" class="btn btn-primary">View All Products</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <div class="testimonials-grid" id="testimonialsGrid">
+                    <!-- Testimonials will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Upgrade Your Tech?</h2>
+                    <p>Join thousands of satisfied customers who trust TechStore for their electronics needs.</p>
+                    <a href="pages/store.html" class="btn btn-primary">Start Shopping</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechStore</h3>
+                    <p>Your trusted partner for premium electronics and exceptional service.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages/store.html">Store</a></li>
+                        <li><a href="pages/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📧 info@techstore.com</p>
+                    <p>📱 +1 (555) 123-4567</p>
+                    <p>📍 123 Tech Street, Digital City</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechStore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/branding.js"></script>
+    <script src="scripts/cart.js"></script>
+    <script src="scripts/filtering.js"></script>
+    <script src="scripts/whatsapp.js"></script>
+    <script src="scripts/emailjs-config.js"></script>
+</body>
+</html> 

@@ -1,0 +1,104 @@
+{
+  "testimonials": [
+    {
+      "id": "testimonial-1",
+      "name": "Sarah Johnson",
+      "role": "Software Developer",
+      "rating": 5,
+      "content": "TechStore has been my go-to for all electronics needs. The quality of products and customer service is exceptional. I recently purchased a MacBook Air M2 and the delivery was lightning fast!",
+      "avatar": "👩‍💻",
+      "verified": true,
+      "date": "2024-01-10"
+    },
+    {
+      "id": "testimonial-2",
+      "name": "Michael Chen",
+      "role": "Gaming Enthusiast",
+      "rating": 5,
+      "content": "Finally got my hands on a PS5 thanks to TechStore! The ordering process was smooth, and their WhatsApp support team was incredibly helpful. Highly recommend for any gaming gear!",
+      "avatar": "🎮",
+      "verified": true,
+      "date": "2024-01-08"
+    },
+    {
+      "id": "testimonial-3",
+      "name": "Emily Rodriguez",
+      "role": "Student",
+      "rating": 5,
+      "content": "As a student on a budget, I was worried about finding quality electronics. TechStore not only had great prices but also offered student discounts. My iPad Air is perfect for note-taking!",
+      "avatar": "👩‍🎓",
+      "verified": true,
+      "date": "2024-01-05"
+    },
+    {
+      "id": "testimonial-4",
+      "name": "David Thompson",
+      "role": "Business Owner",
+      "rating": 5,
+      "content": "I've been ordering electronics for my company through TechStore for over a year now. Their bulk pricing and reliable delivery have made them our preferred supplier. Professional service every time.",
+      "avatar": "👨‍💼",
+      "verified": true,
+      "date": "2024-01-03"
+    },
+    {
+      "id": "testimonial-5",
+      "name": "Lisa Wang",
+      "role": "Tech Blogger",
+      "rating": 5,
+      "content": "I review a lot of tech products, and TechStore consistently delivers authentic, high-quality items. Their product descriptions are accurate, and the customer support team is knowledgeable about their inventory.",
+      "avatar": "📱",
+      "verified": true,
+      "date": "2023-12-28"
+    },
+    {
+      "id": "testimonial-6",
+      "name": "Robert Kim",
+      "role": "Photographer",
+      "rating": 5,
+      "content": "Ordered the iPhone 15 Pro for my photography business. The camera quality is incredible, and TechStore's express shipping got it to me just in time for a big shoot. Excellent service!",
+      "avatar": "📸",
+      "verified": true,
+      "date": "2023-12-25"
+    },
+    {
+      "id": "testimonial-7",
+      "name": "Amanda Foster",
+      "role": "Remote Worker",
+      "rating": 5,
+      "content": "Working from home requires reliable tech, and TechStore has never let me down. My Dell XPS 13 is perfect for video calls and multitasking. Fast delivery and great prices!",
+      "avatar": "🏠",
+      "verified": true,
+      "date": "2023-12-20"
+    },
+    {
+      "id": "testimonial-8",
+      "name": "James Wilson",
+      "role": "Music Producer",
+      "rating": 5,
+      "content": "The Sony WH-1000XM5 headphones I got from TechStore are incredible for music production. Crystal clear sound and amazing noise cancellation. Their tech support helped me with setup questions too.",
+      "avatar": "🎵",
+      "verified": true,
+      "date": "2023-12-18"
+    },
+    {
+      "id": "testimonial-9",
+      "name": "Maria Garcia",
+      "role": "Fitness Trainer",
+      "rating": 5,
+      "content": "My Apple Watch Series 9 from TechStore has been a game-changer for tracking my workouts and health metrics. The battery life is impressive, and the health features are incredibly accurate.",
+      "avatar": "💪",
+      "verified": true,
+      "date": "2023-12-15"
+    },
+    {
+      "id": "testimonial-10",
+      "name": "Alex Turner",
+      "role": "Content Creator",
+      "rating": 5,
+      "content": "As a YouTuber, I need reliable equipment. TechStore's selection of accessories is amazing, and their return policy gives me peace of mind. The Logitech MX Master mouse is perfect for video editing!",
+      "avatar": "🎬",
+      "verified": true,
+      "date": "2023-12-12"
+    }
+  ]
+} 
