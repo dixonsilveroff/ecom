@@ -184,20 +184,16 @@ class ProductFiltering {
     createProductElement(product) {
         const productDiv = document.createElement('div');
         productDiv.className = 'product-card';
-        
         const discount = product.originalPrice > product.price;
         const discountPercentage = discount ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100) : 0;
-
         productDiv.innerHTML = `
-            <div class="product-image">
-                <span class="product-emoji">${product.image}</span>
-                ${discount ? `<span class="discount-badge">-${discountPercentage}%</span>` : ''}
+            <div class="product-image" style="background: url(${product.image}); background-repeat: round;">
             </div>
             <div class="product-info">
                 <h3 class="product-name">${product.name}</h3>
                 <p class="product-description">${product.description}</p>
                 <div class="product-rating">
-                    <span class="stars">${'⭐'.repeat(Math.floor(product.rating))}</span>
+                    <span class="stars">${'\u2b50'.repeat(Math.floor(product.rating))}</span>
                     <span class="rating-text">${product.rating} (${product.reviews})</span>
                 </div>
                 <div class="product-price">
@@ -214,7 +210,6 @@ class ProductFiltering {
                 </div>
             </div>
         `;
-
         return productDiv;
     }
 
@@ -240,7 +235,7 @@ class ProductFiltering {
                     <button class="modal-close">&times;</button>
                     <div class="modal-body">
                         <div class="product-modal-image">
-                            <span class="product-emoji-large">${product.image}</span>
+                            <img src="${product.image}" alt="${product.name}" style="width:120px;height:120px;object-fit:contain;" />
                         </div>
                         <div class="product-modal-info">
                             <h2>${product.name}</h2>
@@ -264,7 +259,6 @@ class ProductFiltering {
                 </div>
             </div>
         `;
-
         // Add modal styles
         const style = document.createElement('style');
         style.textContent = `

@@ -14,7 +14,7 @@
         "Titanium design with Ceramic Shield",
         "USB-C connector"
       ],
-      "image": "📱",
+      "image": "../assets/images/iphone-15-pro.jpg",
       "rating": 4.8,
       "reviews": 1247,
       "inStock": true,
@@ -35,7 +35,7 @@
         "1080p FaceTime HD camera",
         "MagSafe 3 charging port"
       ],
-      "image": "💻",
+      "image": "../assets/images/macbook-air-m2.jpg",
       "rating": 4.9,
       "reviews": 892,
       "inStock": true,
@@ -56,7 +56,7 @@
         "Touch ID in top button",
         "USB-C connector"
       ],
-      "image": "📱",
+      "image": "../assets/images/ipad-air.jpeg",
       "rating": 4.7,
       "reviews": 567,
       "inStock": true,
@@ -77,7 +77,7 @@
         "Sweat and water resistant",
         "Up to 4.5 hours listening time"
       ],
-      "image": "🎧",
+      "image": "../assets/images/airpods-pro-2.png",
       "rating": 4.6,
       "reviews": 1234,
       "inStock": true,
@@ -98,7 +98,7 @@
         "3D audio technology",
         "Backward compatibility with PS4 games"
       ],
-      "image": "🎮",
+      "image": "../assets/images/PlayStation5.jpg",
       "rating": 4.9,
       "reviews": 2156,
       "inStock": true,
@@ -119,7 +119,7 @@
         "Galaxy AI features",
         "25W fast charging"
       ],
-      "image": "📱",
+      "image": "../assets/images/galaxy-s24.jpg",
       "rating": 4.7,
       "reviews": 987,
       "inStock": true,
@@ -140,7 +140,7 @@
         "512GB PCIe NVMe SSD",
         "Intel Iris Xe Graphics"
       ],
-      "image": "💻",
+      "image": "../assets/images/dell-xps-13.jpg",
       "rating": 4.5,
       "reviews": 456,
       "inStock": true,
@@ -161,7 +161,7 @@
         "Joy-Con controllers",
         "Dock for TV mode"
       ],
-      "image": "🎮",
+      "image": "../assets/images/nintendo-Switch-OLED.jpg",
       "rating": 4.8,
       "reviews": 1789,
       "inStock": true,
@@ -182,7 +182,7 @@
         "GPS and cellular options",
         "Up to 18 hours battery life"
       ],
-      "image": "⌚",
+      "image": "../assets/images/apple-series-9-watch.png",
       "rating": 4.8,
       "reviews": 654,
       "inStock": true,
@@ -203,7 +203,7 @@
         "Android 14 with 7 years of updates",
         "Wireless charging"
       ],
-      "image": "📱",
+      "image": "../assets/images/google-pixel-8-pro.jpg",
       "rating": 4.6,
       "reviews": 432,
       "inStock": true,
@@ -224,7 +224,7 @@
         "Up to 70 days battery life",
         "Multi-device connectivity"
       ],
-      "image": "🖱️",
+      "image": "../assets/images/logitech-ms.jpg",
       "rating": 4.7,
       "reviews": 789,
       "inStock": true,
@@ -245,7 +245,7 @@
         "Touch controls",
         "Multipoint connection"
       ],
-      "image": "🎧",
+      "image": "../assets/images/sony-mx-100.jpg",
       "rating": 4.9,
       "reviews": 1123,
       "inStock": true,

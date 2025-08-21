@@ -48,6 +48,23 @@ class StoreBranding {
         if (metaDescription && this.settings.store?.description) {
             metaDescription.content = this.settings.store.description;
         }
+
+        // Update footer details if present
+        if (document.getElementById('footerStoreDesc')) {
+            document.getElementById('footerStoreDesc').textContent = this.settings.store?.description || '';
+        }
+        if (document.getElementById('footerEmail')) {
+            document.getElementById('footerEmail').textContent = `📧 ${this.settings.contact?.email || ''}`;
+        }
+        if (document.getElementById('footerPhone')) {
+            document.getElementById('footerPhone').textContent = `📱 ${this.settings.contact?.phone || ''}`;
+        }
+        if (document.getElementById('footerAddress')) {
+            const addr = this.settings.contact?.address;
+            if (addr) {
+                document.getElementById('footerAddress').textContent = `📍 ${addr.street}, ${addr.city}`;
+            }
+        }
     }
 
     setupNavigation() {

@@ -17,13 +17,13 @@
         <nav class="nav">
             <div class="nav-container">
                 <div class="nav-brand">
-                    <h1 class="brand-name">TechStore</h1>
+                    <h1 class="brand-name">TechStore</h1> <!-- Will be replaced dynamically -->
                 </div>
                 <div class="nav-menu">
                     <a href="../index.html" class="nav-link">Home</a>
                     <a href="store.html" class="nav-link">Store</a>
                     <a href="contact.html" class="nav-link">Contact</a>
-                    <a href="checkout.html" class="nav-link cart-link active">
+                    <a href="checkout.html" class="nav-link cart-link">
                         Cart <span class="cart-count" id="cartCount">0</span>
                     </a>
                 </div>
@@ -200,8 +200,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>TechStore</h3>
-                    <p>Your trusted partner for premium electronics and exceptional service.</p>
+                    <h3 class="brand-name">TechStore</h3>
+                    <p id="footerStoreDesc">Your trusted partner for premium electronics and exceptional service.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
@@ -213,13 +213,13 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contact Info</h4>
-                    <p>📧 info@techstore.com</p>
-                    <p>📱 +1 (555) 123-4567</p>
-                    <p>📍 123 Tech Street, Digital City</p>
+                    <p id="footerEmail">📧 info@techstore.com</p>
+                    <p id="footerPhone">📱 +1 (555) 123-4567</p>
+                    <p id="footerAddress">📍 123 Tech Street, Digital City</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 TechStore. All rights reserved.</p>
+                <p>&copy; 2024 <span class="brand-name">TechStore</span>. All rights reserved.</p>
             </div>
         </div>
     </footer>
