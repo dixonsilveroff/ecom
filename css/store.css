@@ -8,6 +8,7 @@
 /* Store Page Styles */
 .store-header {
     /* background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); */
+    color: #f8f9fa;
     padding: 3rem 0;
     text-align: center;
 }
@@ -195,6 +196,7 @@
     line-height: 1.5;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }

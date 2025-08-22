@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/store.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
@@ -19,7 +19,13 @@
                 <div class="nav-brand">
                     <h1 class="brand-name">TechStore</h1>
                 </div>
-                <div class="nav-menu">
+                <!-- Modern Mobile Menu Implementation -->
+                <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false">
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                </button>
+                <div class="nav-menu" id="navMenu">
                     <a href="index.html" class="nav-link active">Home</a>
                     <a href="pages/store.html" class="nav-link">Store</a>
                     <a href="pages/contact.html" class="nav-link">Contact</a>
@@ -27,11 +33,6 @@
                         Cart <span class="cart-count" id="cartCount">0</span>
                     </a>
                 </div>
-                <button class="nav-toggle" id="navToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
             </div>
         </nav>
     </header>
@@ -39,22 +40,40 @@
     <!-- Main Content -->
     <main>
         <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <h1 class="hero-title">Welcome to TechStore</h1>
-                    <p class="hero-subtitle">Your one-stop destination for premium electronics, cutting-edge gadgets, and innovative technology solutions.</p>
-                    <div class="hero-buttons">
-                        <a href="pages/store.html" class="btn btn-primary">Shop Now</a>
-                        <a href="pages/contact.html" class="btn btn-secondary">Learn More</a>
+        <section class="hero revamped-hero" style="background: linear-gradient(120deg, #0f2027 0%, #2c5364 100%); color: #fff; padding: 0; min-height: 520px; display: flex; align-items: center; position: relative; overflow: hidden;">
+            <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; min-height: 520px;">
+                <div class="hero-content" style="flex: 1 1 400px; z-index: 2; max-width: 540px;">
+                    <h1 class="hero-title" style="font-size: 3rem; font-weight: 800; line-height: 1.1; margin-bottom: 1.2rem; letter-spacing: -1px;">
+                        Elevate Your <span style="color: #00e6d0;">Tech</span> Experience
+                    </h1>
+                    <p class="hero-subtitle" style="font-size: 1.35rem; margin-bottom: 2.2rem; color: #e0e0e0;">
+                        Discover the latest in electronics, gadgets, and innovation. Shop the best brands, enjoy fast delivery, and experience next-level customer care.
+                    </p>
+                    <div class="hero-buttons" style="display: flex; gap: 1.2rem;">
+                        <a href="pages/store.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.2rem; border-radius: 32px; background: #00e6d0; color: #0f2027; font-weight: 700; box-shadow: 0 4px 24px 0 rgba(0,230,208,0.15); border: none;">Shop Now</a>
+                        <a href="pages/contact.html" class="btn btn-secondary" style="font-size: 1.1rem; padding: 1rem 2.2rem; border-radius: 32px; background: rgba(255,255,255,0.12); color: #fff; font-weight: 700; border: 2px solid #00e6d0;">Learn More</a>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <div class="hero-placeholder">
-                        <span>🚀</span>
-                        <p>Premium Electronics</p>
+                <div class="hero-art" style="flex: 1 1 340px; display: flex; align-items: center; justify-content: center; position: relative; min-width: 320px; min-height: 340px;">
+                    <div style="position: relative; width: 340px; height: 340px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="340" height="340" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 0; left: 0; z-index: 1;">
+                            <circle cx="170" cy="170" r="160" fill="#00e6d0" fill-opacity="0.08"/>
+                            <circle cx="170" cy="170" r="120" fill="#00e6d0" fill-opacity="0.12"/>
+                            <circle cx="170" cy="170" r="80" fill="#00e6d0" fill-opacity="0.18"/>
+                        </svg>
+                        <img src="assets/images/macbook-air-m2.jpg" alt="Featured Tech" style="width: 220px; height: 220px; object-fit: contain; border-radius: 24px; box-shadow: 0 8px 32px 0 rgba(0,0,0,0.18); position: relative; z-index: 2; background: #fff;" />
+                        <div style="position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); background: rgba(15,32,39,0.92); color: #fff; padding: 0.7rem 1.6rem; border-radius: 18px; font-size: 1.1rem; font-weight: 600; box-shadow: 0 2px 12px 0 rgba(0,0,0,0.10); z-index: 3;">
+                            <span style="margin-right: 0.5rem;">🔥</span> Premium Electronics
+                        </div>
                     </div>
                 </div>
+                <!-- Decorative floating shapes -->
+                <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 30px; left: -40px; z-index: 0;">
+                    <circle cx="60" cy="60" r="60" fill="#00e6d0" fill-opacity="0.13"/>
+                </svg>
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; bottom: 40px; right: 40px; z-index: 0;">
+                    <circle cx="40" cy="40" r="40" fill="#00e6d0" fill-opacity="0.10"/>
+                </svg>
             </div>
         </section>
 
