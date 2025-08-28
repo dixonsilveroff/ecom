@@ -235,7 +235,7 @@ class ProductFiltering {
                     <button class="modal-close">&times;</button>
                     <div class="modal-body">
                         <div class="product-modal-image">
-                            <img src="${product.image}" alt="${product.name}" style="width:120px;height:120px;object-fit:contain;" />
+                            <img src="${product.image}" alt="${product.name}" style="width:320px;object-fit:contain;" />
                         </div>
                         <div class="product-modal-info">
                             <h2>${product.name}</h2>
@@ -295,11 +295,13 @@ class ProductFiltering {
                 position: absolute;
                 top: 1rem;
                 right: 1rem;
-                background: none;
-                border: none;
+                background: #000;
+                border-radius: 50%;
+                width: 34px;
+                height: 34px;
                 font-size: 2rem;
                 cursor: pointer;
-                color: #666;
+                color: #e0e0e0;
             }
             .modal-body {
                 display: grid;

@@ -27,11 +27,20 @@
                         Cart <span class="cart-count" id="cartCount">0</span>
                     </a>
                 </div>
-                <button class="nav-toggle" id="navToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </button>
+                <div class="nav-menu" id="navMenu">
+                    <button class="nav-close" aria-label="Close navigation" type="button">&times;</button>
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="store.html" class="nav-link">Store</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="checkout.html" class="nav-link cart-link">
+                        Cart <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
             </div>
         </nav>
     </header>

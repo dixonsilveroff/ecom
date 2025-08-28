@@ -16,13 +16,13 @@
 .page-title {
     font-size: 3rem;
     font-weight: 700;
-    color: #333;
+    color: #fff;
     margin-bottom: 1rem;
 }
 
 .page-subtitle {
     font-size: 1.2rem;
-    color: #666;
+    color: rgba(255, 255, 255, 0.8);
     max-width: 600px;
     margin: 0 auto;
 }
@@ -112,7 +112,7 @@
 
 .results-info {
     font-size: 1.1rem;
-    color: #666;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .sort-select {
@@ -300,8 +300,6 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: none;
-    border: none;
     font-size: 2rem;
     cursor: pointer;
     color: #666;

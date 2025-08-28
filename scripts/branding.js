@@ -69,36 +69,60 @@ class StoreBranding {
 
     setupNavigation() {
         // Mobile navigation toggle
-        const navToggle = document.getElementById('navToggle');
+        // Mobile nav menu toggle logic
+        const navToggle = document.querySelector('.nav-toggle');
         const navMenu = document.querySelector('.nav-menu');
+        let navOverlay = document.querySelector('.nav-overlay');
 
-        if (navToggle && navMenu) {
-            navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                navToggle.classList.toggle('active');
-            });
+        // Add close button logic
+        const navClose = navMenu ? navMenu.querySelector('.nav-close') : null;
+
+        if (navClose) {
+            navClose.addEventListener('click', closeMenu);
         }
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav') && navMenu?.classList.contains('active')) {
-                navMenu.classList.remove('active');
-                navToggle?.classList.remove('active');
+        // Always ensure overlay exists in DOM
+        if (!navOverlay) {
+            navOverlay = document.createElement('div');
+            navOverlay.className = 'nav-overlay';
+            document.body.appendChild(navOverlay);
+        }
+
+        function openMenu() {
+            navMenu.classList.add('open');
+            navToggle.classList.add('active');
+            navOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            navToggle.setAttribute('aria-expanded', 'true');
+        }
+        function closeMenu() {
+            navMenu.classList.remove('open');
+            navToggle.classList.remove('active');
+            navOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            navToggle.setAttribute('aria-expanded', 'false');
+        }
+
+        navToggle && navToggle.addEventListener('click', function () {
+            if (navMenu.classList.contains('open')) {
+                closeMenu();
+            } else {
+                openMenu();
             }
         });
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+        navOverlay && navOverlay.addEventListener('click', closeMenu);
+
+        // Close menu on ESC key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+                closeMenu();
+            }
+        });
+
+        // Close menu when a nav link is clicked
+        navMenu && navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
         });
     }
 
