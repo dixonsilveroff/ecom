@@ -68,62 +68,8 @@ class StoreBranding {
     }
 
     setupNavigation() {
-        // Mobile navigation toggle
-        // Mobile nav menu toggle logic
-        const navToggle = document.querySelector('.nav-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-        let navOverlay = document.querySelector('.nav-overlay');
-
-        // Add close button logic
-        const navClose = navMenu ? navMenu.querySelector('.nav-close') : null;
-
-        if (navClose) {
-            navClose.addEventListener('click', closeMenu);
-        }
-
-        // Always ensure overlay exists in DOM
-        if (!navOverlay) {
-            navOverlay = document.createElement('div');
-            navOverlay.className = 'nav-overlay';
-            document.body.appendChild(navOverlay);
-        }
-
-        function openMenu() {
-            navMenu.classList.add('open');
-            navToggle.classList.add('active');
-            navOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            navToggle.setAttribute('aria-expanded', 'true');
-        }
-        function closeMenu() {
-            navMenu.classList.remove('open');
-            navToggle.classList.remove('active');
-            navOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-            navToggle.setAttribute('aria-expanded', 'false');
-        }
-
-        navToggle && navToggle.addEventListener('click', function () {
-            if (navMenu.classList.contains('open')) {
-                closeMenu();
-            } else {
-                openMenu();
-            }
-        });
-
-        navOverlay && navOverlay.addEventListener('click', closeMenu);
-
-        // Close menu on ESC key
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape' && navMenu.classList.contains('open')) {
-                closeMenu();
-            }
-        });
-
-        // Close menu when a nav link is clicked
-        navMenu && navMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', closeMenu);
-        });
+        // Navigation setup - no mobile toggle functionality
+        // This method is kept for potential future navigation enhancements
     }
 
     // Get store setting by key
