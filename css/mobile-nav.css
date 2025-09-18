@@ -1,0 +1,124 @@
+/* Mobile navigation styles for TechStore */
+@import "style.css";
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1002;
+}
+.nav-toggle .bar {
+  width: 28px;
+  height: 3px;
+  background: var(--primary-dark);
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-close {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--primary);
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 1003;
+  cursor: pointer;
+}
+
+.nav-toggle.active .bar {
+  background: #fff;
+}
+.nav-toggle .bar {
+  transition: all 0.3s cubic-bezier(0.77, 0, 0.18, 1);
+}
+.nav-toggle.active .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+  background: #fff;
+}
+.nav-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.active .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+  background: #fff;
+}
+
+@media (max-width: 900px) {
+  .nav-toggle {
+    display: flex;
+  }
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    width: 80vw;
+    max-width: 340px;
+    height: 100vh;
+    background: var(--primary-bg-gradient);
+    box-shadow: -2px 0 24px 0 rgba(0, 0, 0, 0.15);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3.5rem 2rem 2rem 2rem;
+    gap: 2rem;
+    transition: right 0.3s cubic-bezier(0.77, 0, 0.18, 1);
+    z-index: 1001;
+  }
+  .nav-menu.open {
+    right: 0;
+  }
+  .nav-close {
+    display: none !important;
+  }
+  .nav-link {
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 0.75rem 0;
+  }
+  body.nav-open {
+    overflow: hidden;
+  }
+
+  .nav-link {
+    color: var(--text-secondary);
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--text-secondary);
+  }
+
+  .nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    bottom: 4px;
+    height: 3px;
+    background-color: var(--text-secondary);
+  }
+
+  .nav-menu :nth-child(4) {
+   color: var(--primary-dark);
+   padding-inline: 1rem;
+  }
+}
