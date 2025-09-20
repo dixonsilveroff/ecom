@@ -197,8 +197,8 @@ class ProductFiltering {
                     <span class="rating-text">${product.rating} (${product.reviews})</span>
                 </div>
                 <div class="product-price">
-                    <span class="current-price">$${product.price.toFixed(2)}</span>
-                    ${discount ? `<span class="original-price">$${product.originalPrice.toFixed(2)}</span>` : ''}
+                    <span class="current-price">₦${product.price.toFixed(2)}</span>
+                    ${discount ? `<span class="original-price">₦${product.originalPrice.toFixed(2)}</span>` : ''}
                 </div>
                 <div class="product-actions">
                     <button class="btn btn-primary add-to-cart" data-product-id="${product.id}">
@@ -247,9 +247,9 @@ class ProductFiltering {
                                 </ul>
                             </div>
                             <div class="product-price">
-                                <span class="current-price">$${product.price.toFixed(2)}</span>
+                                <span class="current-price">₦${product.price.toFixed(2)}</span>
                                 ${product.originalPrice > product.price ? 
-                                    `<span class="original-price">$${product.originalPrice.toFixed(2)}</span>` : ''}
+                                    `<span class="original-price">₦${product.originalPrice.toFixed(2)}</span>` : ''}
                             </div>
                             <button class="btn btn-primary add-to-cart" data-product-id="${product.id}">
                                 Add to Cart
@@ -386,4 +386,4 @@ document.addEventListener('DOMContentLoaded', () => {
 // Export for use in other modules
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = ProductFiltering;
-} 
+}

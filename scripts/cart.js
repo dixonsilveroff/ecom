@@ -121,9 +121,9 @@ class ShoppingCart {
         // Update totals
         const total = this.getCartTotal();
 
-        if (subtotalElement) subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
-        if (shippingElement) shippingElement.textContent = shipping === 0 ? 'FREE' : `$${shipping.toFixed(2)}`;
-        if (totalElement) totalElement.textContent = `$${total.toFixed(2)}`;
+        if (subtotalElement) subtotalElement.textContent = `₦${subtotal.toFixed(2)}`;
+        if (shippingElement) shippingElement.textContent = shipping === 0 ? 'FREE' : `₦${shipping.toFixed(2)}`;
+        if (totalElement) totalElement.textContent = `₦${total.toFixed(2)}`;
     }
 
     createCartItemElement(item) {
@@ -135,7 +135,7 @@ class ShoppingCart {
             </div>
             <div class="cart-item-details">
                 <h4>${item.name}</h4>
-                <p class="item-price">$${item.price.toFixed(2)}</p>
+                <p class="item-price">₦${item.price.toFixed(2)}</p>
                 <div class="quantity-controls">
                     <button class="quantity-btn" onclick="window.shoppingCart.updateQuantity('${item.id}', ${item.quantity - 1})">-</button>
                     <span class="quantity">${item.quantity}</span>
@@ -253,10 +253,10 @@ class ShoppingCart {
         message += `*Order Items:*\n`;
         
         orderData.items.forEach(item => {
-            message += `• ${item.name} x${item.quantity} - $${(item.price * item.quantity).toFixed(2)}\n`;
+            message += `• ${item.name} x${item.quantity} - ₦${(item.price * item.quantity).toFixed(2)}\n`;
         });
         
-        message += `\n*Total:* $${orderData.total.toFixed(2)}\n`;
+        message += `\n*Total:* ₦${orderData.total.toFixed(2)}\n`;
         message += `*Order Number:* ${orderData.orderNumber}\n`;
         
         if (orderData.orderNotes) {
@@ -314,4 +314,4 @@ document.addEventListener('DOMContentLoaded', () => {
 // Export for use in other modules
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = ShoppingCart;
-} 
+}
