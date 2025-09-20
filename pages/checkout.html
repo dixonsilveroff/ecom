@@ -1,76 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkout - TechStore</title>
-    <meta name="description" content="Complete your order at TechStore. Secure checkout with multiple payment options.">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/checkout.css">
-    <link rel="stylesheet" href="../css/mobile-nav.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-</head>
-<body>
+    <meta
+      name="description"
+      content="Complete your order at TechStore. Secure checkout with multiple payment options."
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/checkout.css" />
+    <link rel="stylesheet" href="../css/mobile-nav.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <!-- Header -->
     <header class="header">
-        <nav class="nav">
-            <div class="nav-container">
-                <div class="nav-brand">
-                    <h1 class="brand-name">TechStore</h1>
-                </div>
-                <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
-                <div class="nav-menu" id="navMenu">
-                    <a href="../index.html" class="nav-link">Home</a>
-                    <a href="store.html" class="nav-link">Store</a>
-                    <a href="contact.html" class="nav-link">Contact</a>
-                    <a href="checkout.html" class="nav-link cart-link">
-                        Cart <span class="cart-count" id="cartCount">0</span>
-                    </a>
-                </div>
-            </div>
-        </nav>
+      <nav class="nav">
+        <div class="nav-container">
+          <div class="nav-brand">
+            <h1 class="brand-name">TechStore</h1>
+          </div>
+          <button
+            class="nav-toggle"
+            aria-label="Open navigation"
+            aria-expanded="false"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+          <div class="nav-menu" id="navMenu">
+            <a href="../index.html" class="nav-link">Home</a>
+            <a href="store.html" class="nav-link">Store</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="checkout.html" class="nav-link cart-link">
+              Cart <span class="cart-count" id="cartCount">0</span>
+            </a>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <!-- Main Content -->
     <main>
-        <div class="container">
-            <div class="checkout-layout">
-                <!-- Order Form -->
-                <div class="order-form-section">
-                    <h1 class="page-title">Complete Your Order</h1>
-                    
-                    <form id="orderForm" class="order-form">
-                        <!-- Customer Information -->
-                        <div class="form-section">
-                            <h2>Customer Information</h2>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="firstName">First Name *</label>
-                                    <input type="text" id="firstName" name="firstName" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="lastName">Last Name *</label>
-                                    <input type="text" id="lastName" name="lastName" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" required>
-                            </div>
-                        </div>
+      <div class="container">
+        <div class="checkout-layout">
+          <!-- Order Form -->
+          <div class="order-form-section">
+            <h1 class="page-title" style="color: #333;">Complete Your Order</h1>
 
-                        <!-- Shipping Information -->
-                        <div class="form-section">
+            <form id="orderForm" class="order-form">
+              <!-- Customer Information -->
+              <div class="form-section">
+                <h2>Customer Information</h2>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" name="lastName" required />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number *</label>
+                  <input type="tel" id="phone" name="phone" required />
+                </div>
+                <div class="form-group">
+                  <label for="city">City *</label>
+                  <input type="text" id="city" name="city" required />
+                </div>
+                <div class="form-group">
+                  <label for="state">State/Province *</label>
+                  <input type="text" id="state" name="state" required />
+                </div>
+              </div>
+
+              <!-- Shipping Information -->
+              <!-- <div class="form-section">
                             <h2>Shipping Information</h2>
                             <div class="form-group">
                                 <label for="address">Street Address *</label>
@@ -106,131 +129,137 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
-                        <!-- Order Notes -->
-                        <div class="form-section">
-                            <h2>Order Notes</h2>
-                            <div class="form-group">
-                                <label for="orderNotes">Special Instructions (Optional)</label>
-                                <textarea id="orderNotes" name="orderNotes" rows="3" placeholder="Any special requests or delivery instructions..."></textarea>
-                            </div>
-                        </div>
-
-                        <!-- Order Method Selection -->
-                        <div class="form-section">
-                            <h2>How would you like to place your order?</h2>
-                            <div class="order-methods">
-                                <div class="order-method">
-                                    <input type="radio" id="whatsappOrder" name="orderMethod" value="whatsapp" checked>
-                                    <label for="whatsappOrder">
-                                        <div class="method-icon">📱</div>
-                                        <div class="method-content">
-                                            <h3>WhatsApp Order</h3>
-                                            <p>Send order details directly via WhatsApp for instant processing</p>
-                                        </div>
-                                    </label>
-                                </div>
-                                <div class="order-method">
-                                    <input type="radio" id="emailOrder" name="orderMethod" value="email">
-                                    <label for="emailOrder">
-                                        <div class="method-icon">📧</div>
-                                        <div class="method-content">
-                                            <h3>Email Order</h3>
-                                            <p>Send order details via email (processed in background)</p>
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Submit Button -->
-                        <div class="form-section">
-                            <button type="submit" class="btn btn-primary btn-large" id="submitOrder">
-                                Place Order
-                            </button>
-                        </div>
-                    </form>
+              <!-- Order Method Selection -->
+              <div class="form-section">
+                <h2>How would you like to place your order?</h2>
+                <div class="order-methods">
+                  <div class="order-method">
+                    <input
+                      type="radio"
+                      id="whatsappOrder"
+                      name="orderMethod"
+                      value="whatsapp"
+                      checked
+                    />
+                    <label for="whatsappOrder">
+                      <div class="method-icon">📱</div>
+                      <div class="method-content">
+                        <h3>WhatsApp Order</h3>
+                        <p>
+                          Send order details directly via WhatsApp for instant
+                          processing
+                        </p>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="order-method">
+                    <input
+                      type="radio"
+                      id="emailOrder"
+                      name="orderMethod"
+                      value="email"
+                    />
+                    <label for="emailOrder">
+                      <div class="method-icon">📧</div>
+                      <div class="method-content">
+                        <h3>Email Order</h3>
+                        <p>
+                          Send order details via email (processed in background)
+                        </p>
+                      </div>
+                    </label>
+                  </div>
                 </div>
+              </div>
 
-                <!-- Order Summary -->
-                <div class="order-summary-section">
-                    <div class="order-summary">
-                        <h2>Order Summary</h2>
-                        
-                        <div class="cart-items" id="cartItems">
-                            <!-- Cart items will be loaded dynamically -->
-                        </div>
+              <!-- Submit Button -->
+              <div class="form-section">
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-large"
+                  id="submitOrder"
+                >
+                  Place Order
+                </button>
+              </div>
+            </form>
+          </div>
 
-                        <div class="order-totals">
-                            <div class="total-row">
-                                <span>Subtotal:</span>
-                                <span id="subtotal">$0.00</span>
-                            </div>
-                            <div class="total-row">
-                                <span>Shipping:</span>
-                                <span id="shipping">$0.00</span>
-                            </div>
-                            <div class="total-row total">
-                                <span>Total:</span>
-                                <span id="total">$0.00</span>
-                            </div>
-                        </div>
+          <!-- Order Summary -->
+          <div class="order-summary-section">
+            <div class="order-summary">
+              <h2>Order Summary</h2>
 
-                        <div class="shipping-info">
-                            <h3>Shipping Information</h3>
-                            <p>📦 Free shipping on orders over $50</p>
-                            <p>🚚 Standard delivery: 3-5 business days</p>
-                            <p>⚡ Express delivery: 1-2 business days</p>
-                        </div>
+              <div class="cart-items" id="cartItems">
+                <!-- Cart items will be loaded dynamically -->
+              </div>
 
-                        <div class="security-info">
-                            <h3>Secure Ordering</h3>
-                            <p>🔒 Your information is secure and private</p>
-                            <p>✅ No payment required upfront</p>
-                            <p>📋 Order confirmation sent immediately</p>
-                        </div>
-                    </div>
+              <div class="order-totals">
+                <div class="total-row">
+                  <span>Subtotal:</span>
+                  <span id="subtotal">$0.00</span>
                 </div>
+                <div class="total-row">
+                  <span>Shipping:</span>
+                  <span id="shipping">$0.00</span>
+                </div>
+                <div class="total-row total">
+                  <span>Total:</span>
+                  <span id="total">$0.00</span>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3 class="brand-name">TechStore</h3>
-                    <p id="footerStoreDesc">Your trusted partner for premium electronics and exceptional service.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="store.html">Store</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <p id="footerEmail">📧 info@techstore.com</p>
-                    <p id="footerPhone">📱 +1 (555) 123-4567</p>
-                    <p id="footerAddress">📍 123 Tech Street, Digital City</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 <span class="brand-name">TechStore</span>. All rights reserved.</p>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3 class="brand-name">TechStore</h3>
+            <p id="footerStoreDesc">
+              Your trusted partner for premium electronics and exceptional
+              service.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="store.html">Store</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Contact Info</h4>
+            <p id="footerEmail">📧 info@techstore.com</p>
+            <p id="footerPhone">📱 +1 (555) 123-4567</p>
+            <p id="footerAddress">📍 123 Tech Street, Digital City</p>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="time">2024</span> TechStore. All rights reserved.
+          </p>
+        </div>
+      </div>
     </footer>
 
     <!-- Scripts -->
+    <script>
+      var time = document.getElementById("time");
+      time.innerHTML = new Date().getFullYear();
+    </script>
     <script src="../scripts/branding.js"></script>
     <script src="../scripts/cart.js"></script>
     <script src="../scripts/filtering.js"></script>
     <script src="../scripts/whatsapp.js"></script>
     <script src="../scripts/emailjs-config.js"></script>
     <script src="../scripts/mobile-nav.js"></script>
-</body>
+  </body>
 </html>

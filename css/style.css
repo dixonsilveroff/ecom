@@ -151,7 +151,7 @@ a:hover {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 .75rem;
 }
 
 /* Buttons */
@@ -380,7 +380,7 @@ a:hover {
 
 /* Featured Products */
 .featured-products {
-    padding: 5rem 0;
+    padding: 2rem 0;
 }
 
 .products-grid {
@@ -487,9 +487,6 @@ a:hover {
         justify-content: center;
     }
     .features-grid {
-        grid-template-columns: 1fr;
-    }
-    .products-grid {
         grid-template-columns: 1fr;
     }
     .testimonials-grid {

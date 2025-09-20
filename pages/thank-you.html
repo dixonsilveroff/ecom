@@ -134,12 +134,16 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 TechStore. All rights reserved.</p>
+                <p>&copy; <span id="time">2024</span> TechStore. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
+    <script>
+        var time = document.getElementById('time');
+        time.innerHTML = new Date().getFullYear();
+    </script>
     <script src="../scripts/branding.js"></script>
     <script src="../scripts/cart.js"></script>
     <script src="../scripts/filtering.js"></script>

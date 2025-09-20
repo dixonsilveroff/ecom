@@ -43,7 +43,7 @@
         <section class="hero revamped-hero" style="background: linear-gradient(120deg, #0f2027 0%, #2c5364 100%); color: #fff; min-height: 520px; display: flex; align-items: center; position: relative; overflow: hidden;">
             <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; min-height: 520px;">
                 <div class="hero-content" style="flex: 1 1 400px; z-index: 2; max-width: 540px;">
-                    <h1 class="hero-title" style="font-size: 3rem; font-weight: 800; line-height: 1.1; margin-bottom: 1.2rem; letter-spacing: -1px;">
+                    <h1 class="hero-title" style="font-size: 3rem; font-weight: 800; line-height: 1.1; margin-bottom: 1.2rem; letter-spacing: -1px; margin-top: 2rem;">
                         Elevate Your <span style="color: #00e6d0;">Tech</span> Experience
                     </h1>
                     <p class="hero-subtitle" style="font-size: 1.35rem; margin-bottom: 2.2rem; color: #e0e0e0;">
@@ -115,12 +115,16 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 TechStore. All rights reserved.</p>
+                <p>&copy; <span id="time">2024</span> TechStore. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
+    <script>
+        var time = document.getElementById('time');
+        time.innerHTML = new Date().getFullYear();
+    </script>
     <script src="scripts/branding.js"></script>
     <script src="scripts/cart.js"></script>
     <script src="scripts/filtering.js"></script>

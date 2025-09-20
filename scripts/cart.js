@@ -119,9 +119,7 @@ class ShoppingCart {
         });
 
         // Update totals
-        const subtotal = this.getCartTotal();
-        const shipping = subtotal >= 50 ? 0 : 5.99; // Free shipping over $50
-        const total = subtotal + shipping;
+        const total = this.getCartTotal();
 
         if (subtotalElement) subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
         if (shippingElement) shippingElement.textContent = shipping === 0 ? 'FREE' : `$${shipping.toFixed(2)}`;
@@ -277,8 +275,8 @@ class ShoppingCart {
         // Add styles
         notification.style.cssText = `
             position: fixed;
-            top: 20px;
-            right: 20px;
+            top: 75px;
+            right:20px;
             padding: 1rem 1.5rem;
             border-radius: 8px;
             color: white;
