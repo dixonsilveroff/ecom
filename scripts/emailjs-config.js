@@ -1,9 +1,10 @@
 // EmailJS Configuration for Order Processing
 class EmailJSIntegration {
     constructor() {
-        this.serviceId = 'your_service_id'; // Replace with your EmailJS service ID
-        this.templateId = 'your_template_id'; // Replace with your EmailJS template ID
-        this.userId = 'your_user_id'; // Replace with your EmailJS user ID
+        this.serviceId = 'service_xvdgi3a'; // Replace with your EmailJS service ID
+        this.contactTemplateId = 'template_q8xq1mn'; // Replace with your EmailJS contact form template ID
+        this.orderTemplateId = 'template_lq4xsry'; // Replace with your EmailJS order template ID
+        this.userId = 'Iz-_OWs-Aa4fTK8cQ'; // Replace with your EmailJS user ID
         this.init();
     }
 
@@ -64,48 +65,43 @@ class EmailJSIntegration {
             email: formData.get('email'),
             phone: formData.get('phone'),
             subject: formData.get('subject'),
-            message: formData.get('message'),
-            newsletter: formData.get('newsletter') === 'on'
+            message: formData.get('message')
         };
 
-        try {
-            // Show loading state
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
+        // Move button state reset outside try/catch to always run after attempt
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
 
+        try {
             // Send email using EmailJS
             const response = await emailjs.send(
                 this.serviceId,
-                this.templateId,
+                this.contactTemplateId,
                 {
                     to_name: 'TechStore Support',
                     from_name: contactData.name,
                     from_email: contactData.email,
                     phone: contactData.phone,
                     subject: contactData.subject,
-                    message: contactData.message,
-                    newsletter: contactData.newsletter ? 'Yes' : 'No'
+                    message: contactData.message
                 }
             );
 
             // Success
             this.showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
             form.reset();
-            
             // Log success
             console.log('Contact form sent successfully:', response);
 
         } catch (error) {
             console.error('Error sending contact form:', error);
             this.showNotification('Failed to send message. Please try again or contact us directly.', 'error');
-        } finally {
-            // Reset button state
-            const submitBtn = form.querySelector('button[type="submit"]');
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
         }
+        // Always reset button state after attempt
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
     }
 
     async processEmailOrder(form) {
@@ -122,35 +118,29 @@ class EmailJSIntegration {
             // Send order email
             const response = await emailjs.send(
                 this.serviceId,
-                'order_template_id', // Replace with your order template ID
+                this.orderTemplateId, // Use dedicated order template ID
                 {
                     to_name: 'TechStore Orders',
-                    order_number: orderData.orderNumber,
                     customer_name: `${orderData.customer.firstName} ${orderData.customer.lastName}`,
                     customer_email: orderData.customer.email,
                     customer_phone: orderData.customer.phone,
                     shipping_address: `${orderData.shipping.address}, ${orderData.shipping.city}, ${orderData.shipping.state} ${orderData.shipping.zipCode}, ${orderData.shipping.country}`,
                     order_items: this.formatOrderItems(orderData.items),
-                    subtotal: `$${orderData.total.toFixed(2)}`,
-                    shipping: orderData.total >= 50 ? 'FREE' : '$5.99',
-                    total: `$${(orderData.total + (orderData.total >= 50 ? 0 : 5.99)).toFixed(2)}`,
-                    order_notes: orderData.orderNotes || 'None',
+                    total: `$${(orderData.total)}`,
                     order_date: new Date().toLocaleDateString()
                 }
             );
 
-            // Send confirmation email to customer
-            await this.sendOrderConfirmation(orderData);
+            // Send confirmation email to customer (commented out)
+            // await this.sendOrderConfirmation(orderData);
 
             // Success
             this.showNotification('Order sent successfully! You\'ll receive a confirmation email shortly.', 'success');
-            
             // Clear cart and redirect
             if (window.shoppingCart) {
                 window.shoppingCart.clearCart();
             }
             window.location.href = 'thank-you.html';
-
             // Log success
             console.log('Order processed successfully:', response);
 
@@ -314,4 +304,4 @@ document.addEventListener('DOMContentLoaded', () => {
 // Export for use in other modules
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = EmailJSIntegration;
-} 
+}
