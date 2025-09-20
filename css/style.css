@@ -7,6 +7,7 @@
     --accent: #00e6d0;
     --text-main: #fff;
     --text-secondary: #e0e0e0;
+    --text-dark: #333;
     --card-bg: #182b3a;
     --card-bg-light: #22384a;
     --border-color: #1e3442;
@@ -31,19 +32,6 @@ body {
     background: var(--primary-bg-gradient);
     min-height: 100vh;
 }
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    color: var(--text-main);
-}
-
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.5rem; }
-h4 { font-size: 1.25rem; }
-h5 { font-size: 1.1rem; }
-h6 { font-size: 1rem; }
 
 p {
     margin-bottom: 1rem;
@@ -123,6 +111,10 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     line-height: 1.2;
     margin-bottom: 1rem;
+}
+
+h1.page-title {
+    color: var(--text-dark);
 }
 
 h1 { font-size: 2.5rem; }

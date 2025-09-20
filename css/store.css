@@ -11,9 +11,9 @@
 }
 /* Store Page Styles */
 .store-header {
-    /* background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); */
+    background: white;
     color: #f8f9fa;
-    padding: 3rem 0;
+    padding: 2rem 0 1.5rem;
     text-align: center;
 }
 
@@ -26,7 +26,7 @@
 
 .page-subtitle {
     font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-dark);
     max-width: 600px;
     margin: 0 auto;
 }
@@ -34,8 +34,8 @@
 /* Filters Section */
 .filters {
     background-color: white;
-    padding: 2rem 0;
-    border-bottom: 1px solid #e9ecef;
+    padding: 0 0 3rem;
+    /* border-bottom: 1px solid #e9ecef; */
 }
 
 .filters-container {
@@ -163,23 +163,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.product-emoji {
-    font-size: 4rem;
-    display: block;
-}
-
-.discount-badge {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background-color: #dc3545;
-    color: white;
-    padding: 0.5rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
 }
 
 .product-info {
@@ -382,7 +365,7 @@
 
 @media (max-width: 480px) {
     .store-header {
-        padding: 2rem 0;
+        padding: 2rem 0 1rem;
     }
     
     .page-title {
@@ -394,7 +377,7 @@
     }
     
     .filters {
-        padding: 1.5rem 0;
+        padding: 0 0 1.5rem;
     }
     
     .search-box {

@@ -491,12 +491,10 @@
     margin-bottom: 2rem;
 }
 
-.order-details,
-.next-steps,
 .contact-support,
 .continue-shopping {
-    margin-bottom: 2.5rem;
-    text-align: left;
+    margin: 3.5rem 0 2.5rem;
+    text-align: center;
 }
 
 .order-details h2,
