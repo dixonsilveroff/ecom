@@ -96,7 +96,7 @@ class ShoppingCart {
         this.updateCheckoutDisplay();
     }
 
-    updateCheckoutDisplay() {
+    async updateCheckoutDisplay() {
         const cartItemsContainer = document.getElementById('cartItems');
         const subtotalElement = document.getElementById('subtotal');
         const shippingElement = document.getElementById('shipping');
@@ -112,6 +112,25 @@ class ShoppingCart {
             return;
         }
 
+        // Update each cart item with latest product details
+        if (!this.productsCache) {
+            try {
+                const response = await fetch('/data/products.json');
+                const data = await response.json();
+                this.productsCache = data.products;
+            } catch (error) {
+                console.error('Failed to load products.json:', error);
+            }
+        }
+        this.cart.forEach(item => {
+            const product = this.productsCache.find(p => p.id === item.id);
+            if (product) {
+                item.name = product.name;
+                item.price = product.price;
+                item.image = product.image;
+            }
+        });
+
         // Add cart items
         this.cart.forEach(item => {
             const itemElement = this.createCartItemElement(item);
@@ -120,6 +139,8 @@ class ShoppingCart {
 
         // Update totals
         const total = this.getCartTotal();
+        const subtotal = total; // If you have discounts, update this logic
+        const shipping = 0; // Update if you have shipping logic
 
         if (subtotalElement) subtotalElement.textContent = `₦${subtotal.toFixed(2)}`;
         if (shippingElement) shippingElement.textContent = shipping === 0 ? 'FREE' : `₦${shipping.toFixed(2)}`;
@@ -130,9 +151,6 @@ class ShoppingCart {
         const itemDiv = document.createElement('div');
         itemDiv.className = 'cart-item';
         itemDiv.innerHTML = `
-            <div class="cart-item-image">
-                <span class="item-emoji">${item.image}</span>
-            </div>
             <div class="cart-item-details">
                 <h4>${item.name}</h4>
                 <p class="item-price">₦${item.price.toFixed(2)}</p>
@@ -152,10 +170,7 @@ class ShoppingCart {
         document.addEventListener('click', (e) => {
             if (e.target.classList.contains('add-to-cart')) {
                 const productId = e.target.dataset.productId;
-                const product = this.getProductById(productId);
-                if (product) {
-                    this.addToCart(product);
-                }
+                this.addToCartById(productId);
             }
         });
 
@@ -169,15 +184,29 @@ class ShoppingCart {
         }
     }
 
-    getProductById(productId) {
-        // This would typically fetch from products.json
-        // For now, return a mock product
-        return {
-            id: productId,
-            name: 'Product',
-            price: 0,
-            image: '📦'
-        };
+    async getProductById(productId) {
+        if (!this.productsCache) {
+            // Fetch and cache products.json
+            try {
+                const response = await fetch('/data/products.json');
+                const data = await response.json();
+                this.productsCache = data.products;
+            } catch (error) {
+                console.error('Failed to load products.json:', error);
+                return null;
+            }
+        }
+        return this.productsCache.find(product => product.id === productId) || null;
+    }
+
+    // Update addToCart to support async getProductById
+    async addToCartById(productId, quantity = 1) {
+        const product = await this.getProductById(productId);
+        if (!product) {
+            this.showNotification('Product not found!', 'error');
+            return;
+        }
+        this.addToCart(product, quantity);
     }
 
     processOrder() {
