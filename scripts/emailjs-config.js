@@ -136,8 +136,8 @@ class EmailJSIntegration {
 
             // Success
             this.showNotification('Order sent successfully! You\'ll receive a confirmation email shortly.', 'success');
-            // Clear cart and redirect
-            if (window.shoppingCart) {
+            // Clear cart and redirect only if order was successful
+            if (window.shoppingCart && response && response.status === 200) {
                 window.shoppingCart.clearCart();
             }
             window.location.href = 'thank-you.html';
