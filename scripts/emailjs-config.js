@@ -126,7 +126,7 @@ class EmailJSIntegration {
                     customer_phone: orderData.customer.phone,
                     shipping_address: `${orderData.shipping.address}, ${orderData.shipping.city}, ${orderData.shipping.state} ${orderData.shipping.zipCode}, ${orderData.shipping.country}`,
                     order_items: this.formatOrderItems(orderData.items),
-                    total: `$${(orderData.total)}`,
+                    total: `₦${orderData.total.toFixed(2)}`,
                     order_date: new Date().toLocaleDateString()
                 }
             );
@@ -179,7 +179,7 @@ class EmailJSIntegration {
 
     formatOrderItems(items) {
         return items.map(item => 
-            `${item.name} x${item.quantity} - $${(item.price * item.quantity).toFixed(2)}`
+            `${item.name} x${item.quantity} - ₦${(item.price * item.quantity).toFixed(2)}`
         ).join('\n');
     }
 
@@ -200,7 +200,7 @@ class EmailJSIntegration {
                     order_number: orderData.orderNumber,
                     order_date: new Date().toLocaleDateString(),
                     order_items: this.formatOrderItems(orderData.items),
-                    total: `$${(orderData.total + (orderData.total >= 50 ? 0 : 5.99)).toFixed(2)}`,
+                    total: `₦${orderData.total.toFixed(2)}`,
                     shipping_address: `${orderData.shipping.address}, ${orderData.shipping.city}, ${orderData.shipping.state} ${orderData.shipping.zipCode}, ${orderData.shipping.country}`,
                     estimated_delivery: this.getEstimatedDelivery(),
                     support_email: 'support@techstore.com',
