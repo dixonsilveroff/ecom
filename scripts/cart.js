@@ -32,7 +32,7 @@ class ShoppingCart {
         const existingItem = this.cart.find(item => item.id === product.id);
         
         if (existingItem) {
-            existingItem.quantity += quantity;
+            existingItem.quantity += quantity
         } else {
             this.cart.push({
                 id: product.id,
@@ -209,11 +209,29 @@ class ShoppingCart {
         this.addToCart(product, quantity);
     }
 
-    processOrder() {
+    async processOrder() {
         if (this.cart.length === 0) {
             this.showNotification('Your cart is empty!', 'error');
             return;
         }
+
+        // Always reload products cache to ensure latest data
+        try {
+            const response = await fetch('/data/products.json');
+            const data = await response.json();
+            this.productsCache = data.products;
+        } catch (error) {
+            console.error('Failed to load products.json:', error);
+        }
+        // Update cart items with latest product details
+        this.cart.forEach(item => {
+            const product = this.productsCache.find(p => p.id === item.id);
+            if (product) {
+                item.name = product.name;
+                item.price = product.price;
+                item.image = product.image;
+            }
+        });
 
         const formData = new FormData(document.getElementById('orderForm'));
         const orderData = {
@@ -280,18 +298,18 @@ class ShoppingCart {
         message += `${orderData.shipping.city}, ${orderData.shipping.state} ${orderData.shipping.zipCode}\n`;
         message += `${orderData.shipping.country}\n\n`;
         message += `*Order Items:*\n`;
-        
-        orderData.items.forEach(item => {
-            message += `• ${item.name} x${item.quantity} - ₦${(item.price * item.quantity).toFixed(2)}\n`;
-        });
-        
+        if (orderData.items && orderData.items.length > 0) {
+            orderData.items.forEach(item => {
+                message += `• ${item.name} x${item.quantity} - ₦${(item.price * item.quantity).toFixed(2)}\n`;
+            });
+        } else {
+            message += `No items in cart.\n`;
+        }
         message += `\n*Total:* ₦${orderData.total.toFixed(2)}\n`;
         message += `*Order Number:* ${orderData.orderNumber}\n`;
-        
         if (orderData.orderNotes) {
             message += `\n*Notes:* ${orderData.orderNotes}`;
         }
-        
         return message;
     }
 
