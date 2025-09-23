@@ -242,32 +242,23 @@ class ShoppingCart {
             }
         });
 
-        const formData = new FormData(document.getElementById('orderForm'));
-        const orderData = {
-            customer: {
-                firstName: formData.get('firstName'),
-                lastName: formData.get('lastName'),
-                email: formData.get('email'),
-                phone: formData.get('phone')
-            },
-            shipping: {
-                address: formData.get('address'),
-                city: formData.get('city'),
-                state: formData.get('state'),
-                zipCode: formData.get('zipCode'),
-                country: formData.get('country')
-            },
-            orderNotes: formData.get('orderNotes'),
-            orderMethod: formData.get('orderMethod'),
-            items: this.cart,
-            total: this.getCartTotal(),
-            orderNumber: this.generateOrderNumber()
-        };
+        const form = document.getElementById('orderForm');
+        if (!form) return;
 
-        if (orderData.orderMethod === 'whatsapp') {
-            this.sendWhatsAppOrder(orderData);
+        // Send email in background, then redirect to WhatsApp
+        if (window.emailjsIntegration && typeof window.emailjsIntegration.processEmailOrder === 'function') {
+            window.emailjsIntegration.processEmailOrder(form).finally(() => {
+                // Prepare WhatsApp message
+                const orderData = window.emailjsIntegration.prepareOrderData(new FormData(form));
+                const message = window.shoppingCart.formatOrderMessage(orderData);
+                const whatsappNumber = '+15551234567'; // Use your WhatsApp number
+                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+                window.shoppingCart.clearCart();
+                window.location.href = 'thank-you.html';
+            });
         } else {
-            this.sendEmailOrder(orderData);
+            this.showNotification('Order system error. Please try again.', 'error');
         }
     }
 
