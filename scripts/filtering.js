@@ -181,6 +181,11 @@ class ProductFiltering {
         return this.products.filter(product => product.featured).slice(0, 4);
     }
 
+    // Utility function to format price with commas
+    formatPrice(amount) {
+        return `₦${Number(amount).toLocaleString('en-NG', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+    }
+
     createProductElement(product) {
         const productDiv = document.createElement('div');
         productDiv.className = 'product-card';
@@ -197,7 +202,7 @@ class ProductFiltering {
                     <span class="rating-text">${product.rating} (${product.reviews})</span>
                 </div>
                 <div class="product-price">
-                    <span class="current-price">₦${product.price.toFixed(2)}</span>
+                    <span class="current-price">${this.formatPrice(product.price)}</span>
                 </div>
                 <div class="product-actions">
                     <button class="btn btn-primary add-to-cart" data-product-id="${product.id}">
@@ -246,7 +251,7 @@ class ProductFiltering {
                                 </ul>
                             </div>
                             <div class="product-price">
-                                <span class="current-price">₦${product.price.toFixed(2)}</span>
+                                <span class="current-price">${this.formatPrice(product.price)}</span>
                             </div>
                             <button class="btn btn-primary add-to-cart" data-product-id="${product.id}">
                                 Add to Cart

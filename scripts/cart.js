@@ -96,6 +96,11 @@ class ShoppingCart {
         this.updateCheckoutDisplay();
     }
 
+    // Utility function to format price with commas
+    formatPrice(amount) {
+        return `₦${Number(amount).toLocaleString('en-NG', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+    }
+
     async updateCheckoutDisplay() {
         const cartItemsContainer = document.getElementById('cartItems');
         const subtotalElement = document.getElementById('subtotal');
@@ -146,9 +151,9 @@ class ShoppingCart {
         const subtotal = total; // If you have discounts, update this logic
         const shipping = 0; // Update if you have shipping logic
 
-        if (subtotalElement) subtotalElement.textContent = `₦${subtotal.toFixed(2)}`;
-        if (shippingElement) shippingElement.textContent = shipping === 0 ? 'FREE' : `₦${shipping.toFixed(2)}`;
-        if (totalElement) totalElement.textContent = `₦${total.toFixed(2)}`;
+        if (subtotalElement) subtotalElement.textContent = this.formatPrice(subtotal);
+        if (shippingElement) shippingElement.textContent = shipping === 0 ? 'FREE' : this.formatPrice(shipping);
+        if (totalElement) totalElement.textContent = this.formatPrice(total);
     }
 
     createCartItemElement(item) {
@@ -157,7 +162,7 @@ class ShoppingCart {
         itemDiv.innerHTML = `
             <div class="cart-item-details">
                 <h4>${item.name}</h4>
-                <p class="item-price">₦${item.price.toFixed(2)}</p>
+                <p class="item-price">${this.formatPrice(item.price)}</p>
                 <div class="quantity-controls">
                     <button class="quantity-btn" onclick="window.shoppingCart.updateQuantity('${item.id}', ${item.quantity - 1})">-</button>
                     <span class="quantity">${item.quantity}</span>
@@ -304,12 +309,12 @@ class ShoppingCart {
         message += `*Order Items:*\n`;
         if (orderData.items && orderData.items.length > 0) {
             orderData.items.forEach(item => {
-                message += `• ${item.name} x${item.quantity} - ₦${(item.price * item.quantity).toFixed(2)}\n`;
+                message += `• ${item.name} x${item.quantity} - ${this.formatPrice(item.price * item.quantity)}\n`;
             });
         } else {
             message += `No items in cart.\n`;
         }
-        message += `\n*Total:* ₦${orderData.total.toFixed(2)}\n`;
+        message += `\n*Total:* ${this.formatPrice(orderData.total)}\n`;
         message += `*Order Number:* ${orderData.orderNumber}\n`;
         if (orderData.orderNotes) {
             message += `\n*Notes:* ${orderData.orderNotes}`;
