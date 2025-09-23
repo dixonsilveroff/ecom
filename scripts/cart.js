@@ -109,6 +109,10 @@ class ShoppingCart {
 
         if (this.cart.length === 0) {
             cartItemsContainer.innerHTML = '<p class="empty-cart">Your cart is empty</p>';
+            // Clear totals when cart is empty
+            if (subtotalElement) subtotalElement.textContent = '₦0.00';
+            if (shippingElement) shippingElement.textContent = 'FREE';
+            if (totalElement) totalElement.textContent = '₦0.00';
             return;
         }
 
