@@ -5,7 +5,6 @@
       "name": "iPhone 15 Pro",
       "category": "smartphones",
       "price": 999.99,
-      "originalPrice": 1099.99,
       "description": "The most advanced iPhone ever with A17 Pro chip, titanium design, and pro camera system.",
       "features": [
         "6.1-inch Super Retina XDR display",
@@ -26,7 +25,6 @@
       "name": "MacBook Air M2",
       "category": "laptops",
       "price": 1199.99,
-      "originalPrice": 1299.99,
       "description": "Ultraportable laptop with M2 chip, all-day battery life, and stunning Retina display.",
       "features": [
         "13.6-inch Liquid Retina display",
@@ -47,7 +45,6 @@
       "name": "iPad Air",
       "category": "tablets",
       "price": 599.99,
-      "originalPrice": 649.99,
       "description": "Powerful tablet with M1 chip, stunning 10.9-inch display, and all-day battery life.",
       "features": [
         "10.9-inch Liquid Retina display",
@@ -68,7 +65,6 @@
       "name": "AirPods Pro",
       "category": "accessories",
       "price": 249.99,
-      "originalPrice": 279.99,
       "description": "Active noise cancellation, transparency mode, and spatial audio for immersive sound.",
       "features": [
         "Active noise cancellation",
@@ -89,7 +85,6 @@
       "name": "PlayStation 5",
       "category": "gaming",
       "price": 499.99,
-      "originalPrice": 499.99,
       "description": "Next-gen gaming console with lightning-fast loading, haptic feedback, and 3D audio.",
       "features": [
         "4K graphics with ray tracing",
@@ -110,7 +105,6 @@
       "name": "Samsung Galaxy S24",
       "category": "smartphones",
       "price": 799.99,
-      "originalPrice": 899.99,
       "description": "Revolutionary AI phone with Galaxy AI, stunning display, and powerful performance.",
       "features": [
         "6.2-inch Dynamic AMOLED 2X display",
@@ -131,7 +125,6 @@
       "name": "Dell XPS 13",
       "category": "laptops",
       "price": 999.99,
-      "originalPrice": 1199.99,
       "description": "Premium ultrabook with InfinityEdge display, Intel Core i7, and stunning design.",
       "features": [
         "13.4-inch 4K Ultra HD+ display",
@@ -152,7 +145,6 @@
       "name": "Nintendo Switch OLED",
       "category": "gaming",
       "price": 349.99,
-      "originalPrice": 349.99,
       "description": "Hybrid gaming console with 7-inch OLED screen and enhanced audio.",
       "features": [
         "7-inch OLED screen",
@@ -173,7 +165,6 @@
       "name": "Apple Watch Series 9",
       "category": "accessories",
       "price": 399.99,
-      "originalPrice": 449.99,
       "description": "Most advanced Apple Watch with S9 chip, faster performance, and new features.",
       "features": [
         "Always-On Retina display",
@@ -194,7 +185,6 @@
       "name": "Google Pixel 8",
       "category": "smartphones",
       "price": 699.99,
-      "originalPrice": 799.99,
       "description": "Google's flagship phone with AI-powered camera and clean Android experience.",
       "features": [
         "6.2-inch OLED display",
@@ -215,7 +205,6 @@
       "name": "Logitech MX Master 3S",
       "category": "accessories",
       "price": 99.99,
-      "originalPrice": 119.99,
       "description": "Premium wireless mouse with precision scrolling and customizable buttons.",
       "features": [
         "8000 DPI Darkfield sensor",
@@ -236,7 +225,6 @@
       "name": "Sony WH-1000XM5",
       "category": "accessories",
       "price": 399.99,
-      "originalPrice": 449.99,
       "description": "Industry-leading noise canceling headphones with exceptional sound quality.",
       "features": [
         "Industry-leading noise cancellation",

@@ -198,7 +198,6 @@ class ProductFiltering {
                 </div>
                 <div class="product-price">
                     <span class="current-price">₦${product.price.toFixed(2)}</span>
-                    ${discount ? `<span class="original-price">₦${product.originalPrice.toFixed(2)}</span>` : ''}
                 </div>
                 <div class="product-actions">
                     <button class="btn btn-primary add-to-cart" data-product-id="${product.id}">
@@ -248,8 +247,6 @@ class ProductFiltering {
                             </div>
                             <div class="product-price">
                                 <span class="current-price">₦${product.price.toFixed(2)}</span>
-                                ${product.originalPrice > product.price ? 
-                                    `<span class="original-price">₦${product.originalPrice.toFixed(2)}</span>` : ''}
                             </div>
                             <button class="btn btn-primary add-to-cart" data-product-id="${product.id}">
                                 Add to Cart
@@ -308,6 +305,9 @@ class ProductFiltering {
                 grid-template-columns: 1fr 1fr;
                 gap: 2rem;
                 padding: 2rem;
+            }
+            .product-modal-info {
+                color: #333;
             }
             .product-emoji-large {
                 font-size: 8rem;
