@@ -140,7 +140,7 @@ class EmailJSIntegration {
             if (window.shoppingCart && response && response.status === 200) {
                 window.shoppingCart.clearCart();
             }
-            window.location.href = 'thank-you.html';
+            // window.location.href = 'thank-you.html'; // Redirect removed
             // Log success
             console.log('Order processed successfully:', response);
 

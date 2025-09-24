@@ -72,7 +72,6 @@ class ShoppingCart {
         this.cart = [];
         this.saveCart();
         this.updateCartDisplay();
-        this.showNotification('Cart cleared!');
     }
 
     getCartTotal() {
@@ -255,17 +254,11 @@ class ShoppingCart {
                 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
                 window.shoppingCart.clearCart();
-                window.location.href = 'thank-you.html';
+                // Do NOT redirect to thank-you.html or any page
             });
         } else {
             this.showNotification('Order system error. Please try again.', 'error');
         }
-    }
-
-    generateOrderNumber() {
-        const timestamp = Date.now();
-        const random = Math.floor(Math.random() * 1000);
-        return `TS-${timestamp}-${random}`;
     }
 
     sendWhatsAppOrder(orderData) {
@@ -273,30 +266,23 @@ class ShoppingCart {
         const whatsappNumber = '+15551234567'; // Replace with actual number
         const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
-        
-        // Clear cart and redirect to thank you page
+        // Clear cart only, do not redirect to thank you page
         this.clearCart();
-        window.location.href = 'thank-you.html';
     }
 
     sendEmailOrder(orderData) {
         // This would integrate with EmailJS
         console.log('Sending email order:', orderData);
-        
-        // For now, just redirect to thank you page
+        // Clear cart only, do not redirect to thank you page
         this.clearCart();
-        window.location.href = 'thank-you.html';
     }
 
     formatOrderMessage(orderData) {
-        let message = `🛒 *New Order from TechStore*\n\n`;
+        let message = `🛒 *New Order*\n\n`;
         message += `*Customer:* ${orderData.customer.firstName} ${orderData.customer.lastName}\n`;
         message += `*Email:* ${orderData.customer.email}\n`;
         message += `*Phone:* ${orderData.customer.phone}\n\n`;
-        message += `*Shipping Address:*\n`;
-        message += `${orderData.shipping.address}\n`;
-        message += `${orderData.shipping.city}, ${orderData.shipping.state} ${orderData.shipping.zipCode}\n`;
-        message += `${orderData.shipping.country}\n\n`;
+        message += `*Location:* ${orderData.customer.city || ''}, ${orderData.customer.state || ''}\n\n`;
         message += `*Order Items:*\n`;
         if (orderData.items && orderData.items.length > 0) {
             orderData.items.forEach(item => {
@@ -306,7 +292,6 @@ class ShoppingCart {
             message += `No items in cart.\n`;
         }
         message += `\n*Total:* ${this.formatPrice(orderData.total)}\n`;
-        message += `*Order Number:* ${orderData.orderNumber}\n`;
         if (orderData.orderNotes) {
             message += `\n*Notes:* ${orderData.orderNotes}`;
         }

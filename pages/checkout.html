@@ -128,6 +128,43 @@
       </div>
     </main>
 
+    <!-- Thank You Modal -->
+    <div id="thankYouModal" class="modal-overlay" style="display:none;">
+      <div class="thank-you-modal-card">
+        <div class="success-icon">✅</div>
+        <h1 class="thank-you-title">Thank You for Your Order!</h1>
+        <p class="thank-you-subtitle">
+          Your order has been successfully received and is being processed. <br>
+          We will contact you, soon!
+        </p>
+        <div class="contact-support">
+          <h2>Need Help?</h2>
+          <p>
+            If you have any questions about your order, don't hesitate to reach
+            out to our customer support team.
+          </p>
+          <div class="support-options">
+            <a href="contact.html" class="btn btn-primary">Contact Support</a>
+          </div>
+        </div>
+        <div class="continue-shopping">
+          <h2>Continue Shopping</h2>
+          <p>Discover more amazing products in our store.</p>
+          <a href="store.html" class="btn btn-primary">Browse Products</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div
+      id="loadingOverlay"
+      class="modal-overlay"
+      style="display:none;align-items:center;justify-content:center;"
+    >
+      <div class="loading-spinner"></div>
+      <span class="loading-text">Processing your order...</span>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
@@ -173,5 +210,27 @@
     <script src="../scripts/whatsapp.js"></script>
     <script src="../scripts/emailjs-config.js"></script>
     <script src="../scripts/mobile-nav.js"></script>
+    <script>
+      // Modal and loading logic
+      const orderForm = document.getElementById("orderForm");
+      const thankYouModal = document.getElementById("thankYouModal");
+      const loadingOverlay = document.getElementById("loadingOverlay");
+      if (orderForm) {
+        orderForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          loadingOverlay.style.display = "flex";
+          setTimeout(() => {
+            loadingOverlay.style.display = "none";
+            thankYouModal.style.display = "flex";
+            // Optionally clear cart here
+            if (window.shoppingCart) window.shoppingCart.clearCart();
+          }, 1800);
+        });
+      }
+      // Close modal on click outside
+      thankYouModal.addEventListener("click", function (e) {
+        if (e.target === thankYouModal) thankYouModal.style.display = "none";
+      });
+    </script>
   </body>
 </html>
