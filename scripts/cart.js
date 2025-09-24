@@ -246,15 +246,14 @@ class ShoppingCart {
 
         // Send email in background, then redirect to WhatsApp
         if (window.emailjsIntegration && typeof window.emailjsIntegration.processEmailOrder === 'function') {
+            // Prepare WhatsApp message BEFORE processing email (before cart is cleared)
+            const orderData = window.emailjsIntegration.prepareOrderData(new FormData(form));
+            const message = window.shoppingCart.formatOrderMessage(orderData);
+            const whatsappNumber = '+2347038950015'; // Use your WhatsApp number
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
             window.emailjsIntegration.processEmailOrder(form).finally(() => {
-                // Prepare WhatsApp message
-                const orderData = window.emailjsIntegration.prepareOrderData(new FormData(form));
-                const message = window.shoppingCart.formatOrderMessage(orderData);
-                const whatsappNumber = '+15551234567'; // Use your WhatsApp number
-                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
                 window.shoppingCart.clearCart();
-                // Do NOT redirect to thank-you.html or any page
             });
         } else {
             this.showNotification('Order system error. Please try again.', 'error');
@@ -263,7 +262,7 @@ class ShoppingCart {
 
     sendWhatsAppOrder(orderData) {
         const message = this.formatOrderMessage(orderData);
-        const whatsappNumber = '+15551234567'; // Replace with actual number
+        const whatsappNumber = '2347038950015'; // Replace with actual number
         const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
         // Clear cart only, do not redirect to thank you page
