@@ -46,25 +46,6 @@ a {
 a:hover {
     color: #fff;
 }
-.btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 32px;
-    background: var(--primary);
-    color: #0f2027;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
-    box-shadow: var(--shadow);
-}
-
-.btn-primary {
-    background: var(--primary);
-    color: #0f2027;
-    border: none;
-}
 
 .btn-secondary {
     background: rgba(255,255,255,0.12);
@@ -91,15 +72,6 @@ a:hover {
 .footer a:hover {
     color: var(--primary) !important;
     text-decoration: underline;
-}
-.footer a:hover {
-    color: #fff !important;
-}
-/* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 html {
@@ -382,9 +354,6 @@ a:hover {
     margin-bottom: 3rem;
 }
 
-.text-center {
-    text-align: center;
-}
 
 /* Testimonials */
 .testimonials {

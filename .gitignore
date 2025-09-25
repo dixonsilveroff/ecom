@@ -2,3 +2,4 @@ changelog.txt
 delivery workflow.txt
 .gitignore
 data/products.json
+data/settings.json

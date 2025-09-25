@@ -203,13 +203,6 @@ class EmailJSIntegration {
         }
     }
 
-    getEstimatedDelivery() {
-        const today = new Date();
-        const deliveryDate = new Date(today);
-        deliveryDate.setDate(today.getDate() + 5); // 5 business days
-        return deliveryDate.toLocaleDateString();
-    }
-
     showNotification(message, type = 'success') {
         // Create notification element
         const notification = document.createElement('div');

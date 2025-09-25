@@ -9,7 +9,6 @@ class StoreBranding {
         try {
             await this.loadSettings();
             this.applyBranding();
-            this.setupNavigation();
         } catch (error) {
             console.error('Error initializing store branding:', error);
         }
@@ -65,11 +64,6 @@ class StoreBranding {
                 document.getElementById('footerAddress').textContent = `📍 ${addr.street}, ${addr.city}`;
             }
         }
-    }
-
-    setupNavigation() {
-        // Navigation setup - no mobile toggle functionality
-        // This method is kept for potential future navigation enhancements
     }
 
     // Get store setting by key
