@@ -223,6 +223,9 @@ class ShoppingCart {
             return;
         }
 
+        // Notify checkout page that order processing has started
+        try { window.checkoutCallbacks && typeof window.checkoutCallbacks.onStart === 'function' && window.checkoutCallbacks.onStart(); } catch (e) { /* noop */ }
+
         // Always reload products cache to ensure latest data
         try {
             const response = await fetch('/data/products.json');
@@ -263,10 +266,17 @@ class ShoppingCart {
             } else {
                 this.showNotification('Order sent!', 'success');
             }
+            // Notify checkout page of success
+            try { window.checkoutCallbacks && typeof window.checkoutCallbacks.onSuccess === 'function' && window.checkoutCallbacks.onSuccess(); } catch (e) { /* noop */ }
             // 3. Clear cart regardless of WhatsApp popup
             this.clearCart();
         } catch (error) {
+            // Notify checkout page of error
+            try { window.checkoutCallbacks && typeof window.checkoutCallbacks.onError === 'function' && window.checkoutCallbacks.onError(error); } catch (e) { /* noop */ }
             this.showNotification('Failed to send order via Email. Please try again.', 'error');
+        } finally {
+            // Always notify that processing has finished
+            try { window.checkoutCallbacks && typeof window.checkoutCallbacks.onFinally === 'function' && window.checkoutCallbacks.onFinally(); } catch (e) { /* noop */ }
         }
     }
 

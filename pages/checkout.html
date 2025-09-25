@@ -206,22 +206,24 @@
     <script src="../scripts/emailjs-config.js"></script>
     <script src="../scripts/mobile-nav.js"></script>
     <script>
-      // Modal and loading logic
-      const orderForm = document.getElementById("orderForm");
+      // Modal and loading logic via callbacks from cart.js
       const thankYouModal = document.getElementById("thankYouModal");
       const loadingOverlay = document.getElementById("loadingOverlay");
-      if (orderForm) {
-        orderForm.addEventListener("submit", function (e) {
-          e.preventDefault();
-          loadingOverlay.style.display = "flex";
-          setTimeout(() => {
-            loadingOverlay.style.display = "none";
-            thankYouModal.style.display = "flex";
-            // Optionally clear cart here
-            if (window.shoppingCart) window.shoppingCart.clearCart();
-          }, 1800);
-        });
-      }
+      window.checkoutCallbacks = {
+        onStart() {
+          if (loadingOverlay) loadingOverlay.style.display = "flex";
+        },
+        onSuccess() {
+          if (loadingOverlay) loadingOverlay.style.display = "none";
+          if (thankYouModal) thankYouModal.style.display = "flex";
+        },
+        onError() {
+          if (loadingOverlay) loadingOverlay.style.display = "none";
+        },
+        onFinally() {
+          // no-op for now, reserved for future usage
+        }
+      };
       // Close modal on click outside
       thankYouModal.addEventListener("click", function (e) {
         if (e.target === thankYouModal) thankYouModal.style.display = "none";
