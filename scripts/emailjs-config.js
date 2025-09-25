@@ -107,14 +107,12 @@ class EmailJSIntegration {
     async processEmailOrder(form) {
         const formData = new FormData(form);
         const orderData = this.prepareOrderData(formData);
-
+        // Show loading state
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Processing Order...';
+        submitBtn.disabled = true;
         try {
-            // Show loading state
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Processing Order...';
-            submitBtn.disabled = true;
-
             // Send order email
             const response = await emailjs.send(
                 this.serviceId,
@@ -130,26 +128,17 @@ class EmailJSIntegration {
                     order_date: new Date().toLocaleDateString()
                 }
             );
-
-            // Send confirmation email to customer (commented out)
-            // await this.sendOrderConfirmation(orderData);
-
-            // Success
-            this.showNotification('Order sent successfully! You\'ll receive a confirmation email shortly.', 'success');
-            // Clear cart and redirect only if order was successful
-            if (window.shoppingCart && response && response.status === 200) {
-                window.shoppingCart.clearCart();
+            // Only return success, do not clear cart or show notification here
+            if (response && response.status === 200) {
+                return true;
+            } else {
+                throw new Error('EmailJS did not return success status.');
             }
-            // window.location.href = 'thank-you.html'; // Redirect removed
-            // Log success
-            console.log('Order processed successfully:', response);
-
         } catch (error) {
             console.error('Error processing order:', error);
-            this.showNotification('Failed to process order. Please try again or use WhatsApp ordering.', 'error');
+            throw error;
         } finally {
             // Reset button state
-            const submitBtn = form.querySelector('button[type="submit"]');
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
         }

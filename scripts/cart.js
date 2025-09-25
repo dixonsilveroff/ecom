@@ -244,36 +244,30 @@ class ShoppingCart {
         const form = document.getElementById('orderForm');
         if (!form) return;
 
-        // Send email in background, then redirect to WhatsApp
-        if (window.emailjsIntegration && typeof window.emailjsIntegration.processEmailOrder === 'function') {
-            // Prepare WhatsApp message BEFORE processing email (before cart is cleared)
-            const orderData = window.emailjsIntegration.prepareOrderData(new FormData(form));
-            const message = window.shoppingCart.formatOrderMessage(orderData);
-            const whatsappNumber = '+2347038950015'; // Use your WhatsApp number
+        // Prepare order data before any async operation
+        const orderData = window.emailjsIntegration.prepareOrderData(new FormData(form));
+        try {
+            // 1. Send Email Order
+            if (window.emailjsIntegration && typeof window.emailjsIntegration.processEmailOrder === 'function') {
+                await window.emailjsIntegration.processEmailOrder(form);
+            } else {
+                throw new Error('EmailJS integration not available.');
+            }
+            // 2. Open WhatsApp
+            const message = this.formatOrderMessage(orderData);
+            const whatsappNumber = '2347038950015';
             const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-            window.emailjsIntegration.processEmailOrder(form).finally(() => {
-                window.open(whatsappUrl, '_blank');
-                window.shoppingCart.clearCart();
-            });
-        } else {
-            this.showNotification('Order system error. Please try again.', 'error');
+            const win = window.open(whatsappUrl, '_blank');
+            if (!win) {
+                this.showNotification('Order email sent, but WhatsApp window was blocked. Please allow popups and try again.', 'warning');
+            } else {
+                this.showNotification('Order sent!', 'success');
+            }
+            // 3. Clear cart regardless of WhatsApp popup
+            this.clearCart();
+        } catch (error) {
+            this.showNotification('Failed to send order via Email. Please try again.', 'error');
         }
-    }
-
-    sendWhatsAppOrder(orderData) {
-        const message = this.formatOrderMessage(orderData);
-        const whatsappNumber = '2347038950015'; // Replace with actual number
-        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, '_blank');
-        // Clear cart only, do not redirect to thank you page
-        this.clearCart();
-    }
-
-    sendEmailOrder(orderData) {
-        // This would integrate with EmailJS
-        console.log('Sending email order:', orderData);
-        // Clear cart only, do not redirect to thank you page
-        this.clearCart();
     }
 
     formatOrderMessage(orderData) {
@@ -281,7 +275,6 @@ class ShoppingCart {
         message += `*Customer:* ${orderData.customer.firstName} ${orderData.customer.lastName}\n`;
         message += `*Email:* ${orderData.customer.email}\n`;
         message += `*Phone:* ${orderData.customer.phone}\n\n`;
-        message += `*Location:* ${orderData.customer.city || ''}, ${orderData.customer.state || ''}\n\n`;
         message += `*Order Items:*\n`;
         if (orderData.items && orderData.items.length > 0) {
             orderData.items.forEach(item => {
