@@ -333,10 +333,10 @@ class ShoppingCart {
         // Add to page
         document.body.appendChild(notification);
         
-        // Remove after 3 seconds
+        // Remove after 5 seconds
         setTimeout(() => {
             notification.remove();
-        }, 3000);
+        }, 5000);
     }
 }
 
