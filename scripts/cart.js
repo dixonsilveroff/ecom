@@ -260,12 +260,12 @@ class ShoppingCart {
             const message = this.formatOrderMessage(orderData);
             const whatsappNumber = '2347038950015';
             const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-            const win = window.open(whatsappUrl, '_blank');
-            if (!win) {
-                this.showNotification('Order email sent, but WhatsApp window was blocked. Please allow popups and try again.', 'warning');
-            } else {
-                this.showNotification('Order sent!', 'success');
-            }
+            
+            // Use direct navigation instead of popup to avoid browser blocking
+            this.showNotification('Order sent! Redirecting to WhatsApp...', 'success');
+            setTimeout(() => {
+                window.location.href = whatsappUrl;
+            }, 1500);
             // Notify checkout page of success
             try { window.checkoutCallbacks && typeof window.checkoutCallbacks.onSuccess === 'function' && window.checkoutCallbacks.onSuccess(); } catch (e) { /* noop */ }
             // 3. Clear cart regardless of WhatsApp popup
